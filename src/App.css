@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
+*{
+  margin:0;
+  padding:0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar{
+  background-color: #F8F9F9;
+  height: 4vmax;
+  display:flex;
+  align-items: center;
+  position:fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1000000;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbarinput{
+  outline: none;
+  border: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home{
+  margin-top: 8.5vh;
+  margin-left: 20vw;
+}
+.homeone{
+  height:91.5vh ;
+  position: fixed;
+  top: 8.5vh;
+  left: 0;
+  width: 20.7vw;
+  border-right: 1px solid rgb(220, 220, 220);
+}
+.box{
+  height: 5vh;
+  width: 30vw;
+  border: 1px solid rgb(220, 220, 220);
   display: flex;
-  flex-direction: column;
+  margin-left: 16vw;
+}
+.smallbox{
+  border-right: 1px solid rgb(220, 220, 220);
+  height: 100%;
+  min-width: 5vw;
+  padding: 5px;
+  font-size: 1vmax;
+  opacity: 0.7;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.last{
+  height: 100%;
+  min-width: 5vw;
+  padding: 5px;
+  font-size: 1vmax;
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.selected{
+  background-color: #E3E6E8;
+}
+.bount{
+  background-color: blue;
   color: white;
+  margin: 5px 5px;
+  padding:2px 6px;
+  font-size: 1vmax;
 }
-
-.App-link {
-  color: #61dafb;
+.askquestion{
+  outline: none;
+  border: none;
+  background-color:#0A95FF;
+  color: white;
+  padding: 5px;
+  font-size: 1vmax;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.topcontainer{
+  border-bottom: 1px solid rgb(220, 220, 220);
+  width: 100%;
+  padding: 1vmax;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.topcontainerbottom{
+  width: 100%;
+  padding: 2vmax;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topcontainer h1{
+  font-size: 2vmax;
+}
+.question{
+  padding: 1vmax 2vmax;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.questio{
+  display: flex;
+  align-items: center;
+  width: 45vw;
+  justify-content: space-evenly;
+}
+.tag{
+  background-color: #E1ECF4;
+  padding: 1px 3px;
+  margin-right: 1vmax;
+  font-size: 1vmax;
+  color:blue;
+}
+.overflowblog{
+  height: 80vh;
+}
+.homebtn{
+  background-color: #E3E6E8;
+  margin-top: 1vmax;
+  width: 100%;
+  padding-left: 1vmax;
+  height: 2vmax;
+  border-right: 2px solid orange;
 }
