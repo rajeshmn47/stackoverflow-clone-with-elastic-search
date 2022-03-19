@@ -1,5 +1,6 @@
 import Question from './question'
 import PublicIcon from '@material-ui/icons/Public';
+import Answer from './answers'
 
 export const Home=()=>{
     return(
@@ -43,13 +44,7 @@ export const Home=()=>{
  <div>
 
  </div>
-   <Question/> 
    <Question/>
-   <Question/> 
-   <Question/>
-   <Question/> 
-   <Question/>
-   <Question/> 
    <Question/>
     </div>
 <div className="w-1/4 border-2 border-orange-200 shadow-xl m-1 overflowblog">
