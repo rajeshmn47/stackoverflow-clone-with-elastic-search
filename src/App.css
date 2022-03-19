@@ -98,15 +98,15 @@
   border-bottom: 1px solid rgb(220, 220, 220);
   width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: row;
+  justify-content: space-evenly;
 }
 .questio{
- display:flex;
-flex-direction: column;
+display: flex;
  width:15vw;
 align-items: flex-end;
+flex-direction: column;
 }
 .tag{
   background-color: #E1ECF4;

@@ -10,15 +10,16 @@ export const Question=()=>{
 </div>
 </div>
 <div className="questi"> 
-<div style={{color:'blue',fontSize:'1vmax',fontSize:'1vmax'}}>  length parameter seems not working</div>
+<div style={{color:'blue',fontSize:'1vmax'}}>  length parameter seems not working</div>
 
 <div style={{color:'blue',display:'flex'}}>
     <div className="tag">javascript</div>
     <div className="tag">css</div>
 <div className="tag">java</div>
-<div style={{color:'blue',fontSize:'1vmax'}}>rajesh</div>
+<div> <span style={{color:'blue',fontSize:'1vmax',marginLeft:'5vmax'}}>rajesh</span> 
+<span style={{color:'black',fontSize:"1vmax"}}>1 hour ago dec</span></div>
 </div>
-<div></div>
+<div style={{fontSize:"1vmax",width:'1vmax',height:'1vmax'}}>    </div>
 </div>
 </div>
 
