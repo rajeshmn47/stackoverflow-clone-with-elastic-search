@@ -1,0 +1,96 @@
+.signup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height: 100vh;
+    background-color: #F1F2F3;
+    padding: 5vmax;
+}
+.joint{
+font-size: 2vmax;
+margin:1vmax 0vmax;
+}
+.signupform{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+border-radius: 5px;
+    background-color: white;
+    padding: 2vmax;
+    width: 25vw;
+    height: 60vh;
+}
+.loginform{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+border-radius: 5px;
+    background-color: white;
+    padding: 2vmax;
+    width: 25vw;
+    height: 40vh;
+}
+.joinone{
+    margin-top: 1vmax;
+}
+.joinonelast{
+    margin-top: 1vmax;
+}
+.joinup{
+    margin-right: 2vmax;
+}
+.inputs{
+    border: 1px solid rgb(150, 148, 148);
+    width: 21vw;
+    height: 5vh;
+}
+.submitbutton{
+    background-color: #0A95FF;
+    color: white;
+    padding: 0.5vmax;
+    border-radius: 5px;
+}
+.sociallogin{
+    width: 25vw;
+display: flex;
+align-items: center;
+justify-content: center;
+    border-radius: 5px;
+    padding: 0.5vmax;
+    margin:1vmax 0vmax;
+}
+.git{
+    background-color: #2F3337;
+    color: white;
+}
+.fb{
+    background-color: #385499;
+    color: white;
+}
+.google{
+    background-color: #ffffff;
+    color: black;
+}
+.loginbtn{
+    background-color: #E1ECF4;
+    border: 1px solid #0A95FF;
+    outline: none;
+    padding: 5px 10px;
+    margin-right: 1vmax;
+    border-radius: 2px;
+    color: #0A95FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signupbtn{
+    background-color: #0A95FF;
+    border: none;
+    color: white;
+    border-radius: 2px;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

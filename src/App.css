@@ -73,6 +73,7 @@
   color: white;
   padding: 5px;
   font-size: 1vmax;
+  margin-right: 1vmax;
 }
 .topcontainer{
   border-bottom: 1px solid rgb(220, 220, 220);
@@ -130,3 +131,4 @@ flex-direction: column;
   display:flex;
  flex-direction: column;
  }
+ 

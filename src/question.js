@@ -17,7 +17,7 @@ export const Question=()=>{
     <div className="tag">css</div>
 <div className="tag">java</div>
 <div> <span style={{color:'blue',fontSize:'1vmax',marginLeft:'5vmax'}}>rajesh</span> 
-<span style={{color:'black',fontSize:"1vmax"}}>1 hour ago dec</span></div>
+<span style={{color:'black',fontSize:"1vmax",marginLeft:'1vmax'}}>1 hour ago dec</span></div>
 </div>
 <div style={{fontSize:"1vmax",width:'1vmax',height:'1vmax'}}>    </div>
 </div>

@@ -1,0 +1,61 @@
+.askquestioncontainer{
+    background-color: #E3E6E8;
+    margin-top:4vmax;
+    padding: 1vmax;
+}
+.askquestion{
+    display: flex;
+
+}
+.askquestions{
+    background-color: #E3E6E8;
+    padding: 1vmax 10vmax;
+    display: flex;
+}
+.questionform{
+    background-color: white;
+    padding:1vmax;
+}
+.inputtitle{
+    border: 1px solid rgb(130, 130, 130);
+    width: 50vw;
+    padding: 0.5vmax 1vmax;
+}
+.inputbody{
+    height: 20vmax;
+    width: 50vmax;
+    border: 1px solid rgb(130, 130, 130);
+    padding: 0.5vmax 1vmax;
+}
+.inputtag{
+    border: 1px solid rgb(130, 130, 130);
+    width: 50vw;
+    padding: 0.5vmax 1vmax;
+}
+.procedure{
+    margin-left: 2vmax;
+    min-height: 40vh;
+    width: 20vw;
+    background-color: #ffffff;
+
+}
+.procedureheading{
+    background-color: #F8F9F9;
+    padding: 0.5vmax 1vmax;
+    width: 20vw;
+}
+.procedures{
+    font-size: 1vmax;
+}
+.cautions{
+    border-bottom: 1px solid rgb(219, 219, 219);
+padding:0.5vmax 1vmax;
+}
+.ques{
+    background-color: #F8F9F9;
+    margin-left: 2vmax;
+
+    margin-top: 2vmax;
+    padding: 0.5vmax 1vmax;
+    box-shadow: #E3E6E8;
+}

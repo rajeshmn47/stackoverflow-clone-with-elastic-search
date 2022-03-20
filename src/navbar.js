@@ -12,6 +12,8 @@ export const Navbar=()=>{
         <SearchIcon style={{opacity:'0.5'}}/>
     <input className="w-30 h-5 navbarinput" placeholder="search..."/>
     </div>
+    <button className='loginbtn'>Login</button>
+    <button className='signupbtn'>Signup</button>
 </div>
 </>
     )
