@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { REGISTER_USER_SUCCESS,REGISTER_USER_REQUEST,
-    LOGIN_SUCCESS,LOGIN_REQUEST,LOGIN_FAIL } from '../constants/userConstants';
+    LOGIN_SUCCESS,LOGIN_REQUEST,LOGIN_FAIL, REGISTER_USER_FAIL } from '../constants/userConstants';
 
 
 export const register= (myform) => async (dispatch) => {
@@ -13,7 +13,8 @@ export const register= (myform) => async (dispatch) => {
     dispatch({ type: REGISTER_USER_SUCCESS, payload: data.user });
 }
 catch (error) {
-    console.log( error.response.data.message)
+    console.log( error.response,'asdfgh')
+    dispatch({ type: REGISTER_USER_FAIL, payload: error.response.data.message });
   }
 }
 
