@@ -1,7 +1,9 @@
 import SearchIcon from '@material-ui/icons/Search';
 import stack from './images/stackoverflow.jpeg'
+import {useNavigate} from 'react-router-dom'
 
 export const Navbar=()=>{
+    const navigate=useNavigate()
     return(
 <>
 <div className="navbar flex align-center justify-center">
@@ -12,8 +14,8 @@ export const Navbar=()=>{
         <SearchIcon style={{opacity:'0.5'}}/>
     <input className="w-30 h-5 navbarinput" placeholder="search..."/>
     </div>
-    <button className='loginbtn'>Login</button>
-    <button className='signupbtn'>Signup</button>
+    <button className='loginbtn' onClick={()=>navigate('login')}>Login</button>
+    <button className='signupbtn' onClick={()=>navigate('/signup')}>Signup</button>
 </div>
 </>
     )

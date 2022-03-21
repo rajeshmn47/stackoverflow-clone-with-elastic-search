@@ -2,9 +2,38 @@ import './loginsignup.css'
 import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import google from '../images/googleicon.jpeg'
+import {useState,useEffect} from 'react'
+import { useDispatch, useSelector } from "react-redux";
+import {login} from '../actions/userAction'
+import { useAlert } from 'react-alert';
+import { useNavigate } from 'react-router-dom';
 
 
 export const Login=()=>{
+    const dispatch=useDispatch()
+    const navigate=useNavigate()
+    const {user,isAuthenticated,loading}=useSelector(
+        (state) => state.user
+      );
+    const[username,setUsername]=useState('')
+    const[password,setPassword]=useState('')
+    const alert = useAlert();
+
+    useEffect(()=>{
+        if(isAuthenticated){
+alert.success('successfully logged in')
+navigate('/')
+        }
+    },[dispatch,loading,isAuthenticated,user])
+
+
+const handlesubmit=async(e)=>{
+    e.preventDefault()
+    console.log(username,password)
+    const formdata={username:username,password:password}
+dispatch(login(formdata))
+console.log('ok')
+}
     return(
         <>
   <div className="signup">
@@ -16,7 +45,7 @@ export const Login=()=>{
     Sign up with google</div>
     <div className='sociallogin fb'><FacebookIcon style={{marginRight:'5px'}}/>
     Sign up with facebook</div>
-<form className='loginform'>
+<form className='loginform' onSubmit={(e)=>handlesubmit(e)}>
   
     <div>
     <h5 className='font-bold'>email</h5>
