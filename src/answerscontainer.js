@@ -4,9 +4,9 @@ import axios from 'axios'
 
 export const Answerscontainer = () => {
   const id = useParams()
-  useEffect(() => {
-    const { data } = axios.get(
-      `https://stackoverflowclonerajesh.herokuapp.com/question/getonequestion/${id}`
+  useEffect(async() => {
+    const { data } =await axios.get(`https://stackoverflowclonerajesh.herokuapp.com/question/getonequestion/${id}`
+      console.log(data)
     )
   }, [id])
   const handlesubmit = () => {}
