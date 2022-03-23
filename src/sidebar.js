@@ -1,3 +1,5 @@
+import PublicIcon from '@material-ui/icons/Public'
+
 export const Sidebar = () => {
   return (
     <>
