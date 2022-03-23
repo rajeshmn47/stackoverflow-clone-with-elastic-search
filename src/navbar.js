@@ -1,11 +1,25 @@
 import SearchIcon from '@material-ui/icons/Search';
 import stack from './images/stackoverflow.jpeg'
 import {useNavigate} from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux";
+import {loadUser} from './actions/userAction'
 
 export const Navbar=()=>{
     const navigate=useNavigate()
+    const dispatch=useDispatch()
+    const {user,isAuthenticated,loading,error}=useSelector(
+        (state) => state.user
+      );
+
+      const logout=()=>{
+        localStorage.removeItem('server_token')
+        dispatch(loadUser())
+        navigate('/')
+      }
     return(
 <>
+
+
 <div className="navbar flex align-center justify-center">
     <img src={stack}  alt='stacl'/>
     <h5 className='m-1'>Stack<span className='font-bold'>Overflow</span></h5>
@@ -14,8 +28,17 @@ export const Navbar=()=>{
         <SearchIcon style={{opacity:'0.5'}}/>
     <input className="w-30 h-5 navbarinput" placeholder="search..."/>
     </div>
+    {user?<><div style={{marginLeft:'1vmax',width:'15vw',display:'flex',alignItems:'center',justifyContent:'space-evenly'}}>
+    <button className='loginbtn' onClick={()=>logout()} >Logout</button>
+    <h5>{user.username}</h5>
+    <img src={user.profilePhoto} alt='' width='20'/>
+    </div>
+    </>:
+    <>
     <button className='loginbtn' onClick={()=>navigate('login')}>Login</button>
     <button className='signupbtn' onClick={()=>navigate('/signup')}>Signup</button>
+    </>
+    }
 </div>
 </>
     )

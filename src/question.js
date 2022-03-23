@@ -1,4 +1,4 @@
-export const Question=()=>{
+export const Question=({text,tags})=>{
     return(
 <>
 <div className="question">
@@ -10,12 +10,12 @@ export const Question=()=>{
 </div>
 </div>
 <div className="questi"> 
-<div style={{color:'blue',fontSize:'1vmax'}}>  length parameter seems not working</div>
+<div style={{color:'blue',fontSize:'1vmax'}}>{text}</div>
 
 <div style={{color:'blue',display:'flex'}}>
-    <div className="tag">javascript</div>
-    <div className="tag">css</div>
-<div className="tag">java</div>
+    {tags.map((t)=><><div className="tag">{t}a</div></>)}
+  
+  
 <div> <span style={{color:'blue',fontSize:'1vmax',marginLeft:'5vmax'}}>rajesh</span> 
 <span style={{color:'black',fontSize:"1vmax",marginLeft:'1vmax'}}>1 hour ago dec</span></div>
 </div>

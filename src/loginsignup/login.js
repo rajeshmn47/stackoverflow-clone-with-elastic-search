@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 export const Login=()=>{
     const dispatch=useDispatch()
     const navigate=useNavigate()
-    const {user,isAuthenticated,loading}=useSelector(
+    const {user,isAuthenticated,loading,error}=useSelector(
         (state) => state.user
       );
     const[username,setUsername]=useState('')
@@ -20,11 +20,15 @@ export const Login=()=>{
     const alert = useAlert();
 
     useEffect(()=>{
+
+        if(error){
+            alert.error(error)
+                    }
         if(isAuthenticated){
 alert.success('successfully logged in')
 navigate('/')
         }
-    },[dispatch,loading,isAuthenticated,user])
+    },[dispatch,loading,isAuthenticated,user,error])
 
 
 const handlesubmit=async(e)=>{
@@ -49,11 +53,11 @@ console.log('ok')
   
     <div>
     <h5 className='font-bold'>email</h5>
-    <input type='text' className='inputs'/>
+    <input type='text' className='inputs' value={username} onChange={(e)=>setUsername(e.target.value)}/>
     </div>
     <div>
     <h5 className='font-bold'>password</h5>
-    <input type='text' className='inputs'/>
+    <input type='text' className='inputs' value={password} onChange={(e)=>setPassword(e.target.value)}/>
     </div>
     <input type='submit' className='submitbutton' value='Log in'/>
 </form>

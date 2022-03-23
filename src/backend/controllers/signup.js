@@ -9,6 +9,7 @@ const jwt = require("jsonwebtoken");
 const bodyParser = require("body-parser");
 const catchasyncerror=require('../catchasyncerrors')
 const ErrorHandler=require('../errorhandler')
+const { OAuth2Client } = require('google-auth-library');
 // Register a User
 router.post('/register',catchasyncerror(async (req, res, next) => {
 console.log('hi boy')
@@ -53,61 +54,96 @@ function checkloggedinuser(req,res,next) {
 
 }
 
-router.get("/loaduser",checkloggedinuser,async function(req, res, next) {
+router.get("/loaduser",checkloggedinuser,catchasyncerror(async function(req, res, next) {
   console.log(req.headers)
   console.log(req.body.uidfromtoken)
-  const notifications=await Notification.find()
   const user=await User.find({_id:{$eq:req.body.uidfromtoken }})
   res.status(200).json({
     message:user
   });
-})
+}))
 
-router.post("/login", async function(req, res, next) {
-  console.log(req.body)
-  const userdetails={ username:req.body.username,
-      password:req.body.password,}
-      User.find({"username":req.body.username,})
-  .exec()
-  .then(doc => {
-    // console.log("response got : ", doc);
-    if (doc != undefined && doc.length > 0) {
-        console.log(userdetails.password)
-        console.log(doc)
-        console.log(req.body.password)
-      if (bcrypt.compareSync(req.body.password, doc[0].password)) {
-        const server_token = jwt.sign(
-          { uid: doc[0].email },
-          server_secret_key
-        );
-        // console.log("UID from JWT: ", doc[0].email);
-        res.status(200).json({
-          message: "User Logged in Successfully",
-          server_token: server_token,
-          current_user: doc[0].email,
-          user_Details: doc[0]
-        });
-      } else {
-        console.log("Error.!!!!!!!");
-        res.status(401).json({
-          message: "Applicant entered wrong password"
-        });
-      }
-    } else {
-      console.log("Applicant is not registered, First Signup");
-      res.status(400).json({
-        message: "Applicant is not registered, First Signup"
-      });
+router.post("/login", catchasyncerror(async function(req, res, next) {
+    const { username, password } = req.body.myform;
+  
+    // checking if user has given password and email both
+  
+    if (!username|| !password) {
+      return next(new ErrorHandler("Please Enter Email & Password", 400));
     }
-  })
-  .catch(err => {
-    console.log("Error : ", err);
-    res.status(500).json({
-      message: "internal server error"
+  
+    const user = await User.findOne({ username }).select("+password");
+  
+    if (!user) {
+      return next(new ErrorHandler("Invalid email or password", 401));
+    }
+  
+    const isPasswordMatched =  bcrypt.compareSync(password, user.password)
+  
+    if (!isPasswordMatched) {
+      return next(new ErrorHandler("Invalid email or password", 401));
+    }
+    const server_token = jwt.sign(
+      { uid: user._id },
+      server_secret_key
+    );
+    res.status(200).json({
+      success: true,
+      user,
+      server_token
     });
-  });
-})
+  }));
+  
+  const client = new OAuth2Client("711974125982-gaeieriu9q60ctbps2qpbjitv0374d7l.apps.googleusercontent.com")
+  
+  const clientId="711974125982-gaeieriu9q60ctbps2qpbjitv0374d7l.apps.googleusercontent.com"
 
+  router.post("/googlelogin", catchasyncerror(async function(req, res, next) {
+      var tokenId = req.body.tokenId
+      var verifyObject = {};
+      verifyObject.idToken = tokenId;
+      verifyObject.audience = clientId;
+      var response=await client.verifyIdToken(verifyObject)
+              const { email_verified } = response.payload;
+              if (email_verified) {
+                console.log(response.payload)
+                const usert=await User.findOne({username:{$eq:response.payload.name }})
+                if(usert){
+                  usert.profilePicture=response.payload.picture
+                  await usert.save()
+                  const server_token = jwt.sign(
+                    { uid: usert._id },
+                    server_secret_key
+                  );
+                  res.status(200).json({
+                    success: true,
+                    usert,
+                    server_token
+                  });
+                }
+                else{
+                const user = await User.create({
+                  username:response.payload.name,
+                  password:'passwordtosave',
+                  profilePhoto:response.payload.picture
+                });
+                console.log(response.payload)
+                const server_token = jwt.sign(
+                  { uid: user._id },
+                  server_secret_key
+                );
+                res.status(200).json({
+                  success: true,
+                  user,
+                  server_token
+                });
+              }
+                
+              } else {
+                  res.json({ status: 403, message: 'Email Not Verified, use another method to login!' });
+              }
+          
+  }))
 
 
 module.exports = router;

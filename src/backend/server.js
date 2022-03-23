@@ -9,6 +9,7 @@ to fetch the data that is entered
 by the user in the HTML form.*/
 const bodyParser = require("body-parser");
 const user = require("./controllers/signup");
+const question = require("./controllers/questionanswers");
 const catcherrors=require('./catchasyncerrors')
 // Allowing app to use body parser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,6 +18,7 @@ const url = "http://localhost:3000";
 //const url = "hosting url";
 app.use(cors({ origin: url, credentials: true }));
 app.use("/auth/", user);
+app.use("/question/",question);
 // Initializing Passport
 
 // Connecting mongoose to our database
