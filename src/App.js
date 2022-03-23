@@ -12,7 +12,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import Logingoogle from './loginsignup/googlesignin'
 import Answerscontainer from './answerscontainer'
-import Answerscontainer from './answerscontainer'
 
 function App() {
   const dispatch = useDispatch()

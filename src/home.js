@@ -67,7 +67,7 @@ export const Home = () => {
           {questions &&
             questions?.map((q) => (
               <>
-                <Question text={q.text} tags={q.tags} />
+                <Question text={q.text} tags={q.tags} id={q._id} />
               </>
             ))}
         </div>
