@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Sidebar from './sidebar'
 
 export const Answerscontainer = () => {
   const id = useParams()
@@ -13,7 +14,8 @@ export const Answerscontainer = () => {
   const handlesubmit = () => {}
   return (
     <>
-      <div className='answerscontainer'>
+      <div className='flex justify-between m-50 p-2 home'>
+        <Sidebar />
         <h1>answers</h1>
       </div>
     </>
