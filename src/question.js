@@ -6,9 +6,11 @@ export const Question = ({ text, tags, id }) => {
     <>
       <div
         className='question'
-        onClick={navigate(
-          `https://stackoverflowclonefrontend.netlify.app/answers/${id}`
-        )}
+        onClick={() =>
+          navigate(
+            `https://stackoverflowclonefrontend.netlify.app/answers/${id}`
+          )
+        }
       >
         <div className='questio'>
           <h5 style={{ marginRight: '2vmax', fontSize: '1vmax' }}>o votes</h5>
