@@ -1,4 +1,7 @@
+import { useNavigate } from 'react-router-dom'
+
 export const Question = ({ text, tags, id }) => {
+  const navigate = useNavigate()
   return (
     <>
       <div
