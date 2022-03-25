@@ -101,12 +101,12 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .questio{
 display: flex;
  width:15vw;
-align-items: flex-end;
+ align-items: flex-end;
 flex-direction: column;
 }
 .tag{
@@ -130,5 +130,6 @@ flex-direction: column;
 .questi{
   display:flex;
  flex-direction: column;
+ width: 30vw;
  }
  

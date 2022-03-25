@@ -19,7 +19,7 @@ export const register = (myform) => async (dispatch) => {
     console.log(myform)
     dispatch({ type: REGISTER_USER_REQUEST })
     const { data } = await axios.post(
-      'https://stackoverflowclonerajesh.herokuapp.com/auth/register',
+      'http://localhost:8000/auth/register',
       { myform }
     )
     console.log(data)
@@ -36,7 +36,7 @@ export const login = (myform) => async (dispatch) => {
     console.log(myform)
     dispatch({ type: LOGIN_REQUEST })
     const { data } = await axios.post(
-      'https://stackoverflowclonerajesh.herokuapp.com/auth/login',
+      'http://localhost:8000/auth/login',
       { myform }
     )
     console.log(data)
@@ -56,7 +56,7 @@ export const loadUser = () => async (dispatch) => {
       localStorage.getItem('server_token')
     dispatch({ type: LOAD_USER_REQUEST })
     const { data } = await axios(
-      'https://stackoverflowclonerajesh.herokuapp.com/auth/loaduser',
+      'http://localhost:8000/auth/loaduser',
       {
         method: 'get',
         headers: {
@@ -67,7 +67,9 @@ export const loadUser = () => async (dispatch) => {
       }
     )
     console.log(data.message[0])
-    dispatch({ type: LOAD_USER_SUCCESS, payload: data.message[0] })
+    if(data.message[0]){
+    dispatch({ type: LOAD_USER_SUCCESS, payload: data.message[0]})
+    }
   } catch (error) {
     dispatch({ type: LOAD_USER_FAIL, payload: error.response.data.message })
   }

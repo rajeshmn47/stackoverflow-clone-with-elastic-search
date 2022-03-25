@@ -28,7 +28,7 @@ export const Navbar=()=>{
         <SearchIcon style={{opacity:'0.5'}}/>
     <input className="w-30 h-5 navbarinput" placeholder="search..."/>
     </div>
-    {user?<><div style={{marginLeft:'1vmax',width:'15vw',display:'flex',alignItems:'center',justifyContent:'space-evenly'}}>
+    {user?.username?<><div style={{marginLeft:'1vmax',width:'15vw',display:'flex',alignItems:'center',justifyContent:'space-evenly'}}>
     <button className='loginbtn' onClick={()=>logout()} >Logout</button>
     <h5>{user.username}</h5>
     <img src={user.profilePhoto} alt='' width='20'/>

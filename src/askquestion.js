@@ -3,6 +3,7 @@ import {useState,useEffect} from 'react'
 import axios from 'axios'
 import {useSelector} from 'react-redux'
 import {useAlert} from 'react-alert'
+import Taginput from './tag-input'
 
 export const Askquestion=()=>{
     const alert=useAlert()
@@ -34,13 +35,13 @@ className='inputtitle' value={title} onChange={(e)=>setTitle(e.target.value)}/>
 <input className='inputbody' value={text} onChange={(e)=>setText(e.target.value)}/>
 <h2>Tags</h2>
 <p style={{fontSize:'1vmax'}}>Add up to 5 tags to describe what your question is about</p>
-<input className='inputtag' value={tags.map((t)=>t)} onChange={(e)=>setTags([e.target.value])}/>
+<Taginput tags={tags} setTags={setTags}/>
 </div>
 <div>
 <div className="procedure">
 <div className='procedureheading'><h2>Step 1:Draft your question</h2></div>
 <div className='procedures'>
-<p style={{margin:'0vmax 0vmax',padding:'1vmax'}}>
+<p style={{margin:'00vmax 0vmax',padding:'1vmax'}}>
     The community is here to help you with specific coding, algorithm, or language problems.</p>
 
 <p style={{padding:'1vmax'}}>Avoid asking opinion-based questions.</p>
@@ -65,6 +66,7 @@ Show some code</h5>
 <button style={{marginLeft:'10vmax',marginTop:'2vmax'}} onClick={(e)=>handlesubmit(e)} type='submit'
 className='askquestion'>Review Your Question</button>
 </div>
+<iframe style={{marginLeft:'25vw'}} src='https://www.dailymotion.com/embed/video/x6gob96' alt='' width='600' height='500'></iframe>
         </>
     )
 }

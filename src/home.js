@@ -3,8 +3,11 @@ import PublicIcon from '@material-ui/icons/Public'
 import Answer from './answers'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Usercard from './Usercard'
+import { useNavigate } from 'react-router-dom'
 
 export const Home = () => {
+  const navigate=useNavigate()
   const [questions, setQuestions] = useState([])
   useEffect(async () => {
     const { data } = await axios.get(
@@ -46,7 +49,7 @@ export const Home = () => {
             <div className='topcontainer'>
               <div className='topcontainerbottom'>
                 <h1>Top Questions</h1>
-                <button className='askquestion'>Ask Question</button>
+                <button className='askquestion' onClick={()=>navigate('/askquestion')}>Ask Question</button>
               </div>
               <div>
                 <div className='box'>
@@ -67,7 +70,8 @@ export const Home = () => {
           {questions &&
             questions?.map((q) => (
               <>
-                <Question text={q.text} tags={q.tags} id={q._id} />
+                <Question text={q.text} tags={q.tags} id={q._id} userid={q.author} 
+                answers={q.answers.length} votes={q.votes} views={q.views}/>
               </>
             ))}
         </div>

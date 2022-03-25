@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
+import Usercard from './Usercard'
 
-export const Question = ({ text, tags, id }) => {
+export const Question = ({ text, tags, id,userid,answers,views,votes }) => {
   const navigate = useNavigate()
   return (
     <>
@@ -8,15 +9,15 @@ export const Question = ({ text, tags, id }) => {
         className='question'
         onClick={() =>
           navigate(
-            `https://stackoverflowclonefrontend.netlify.app/answers/${id}`
+            `/answers/${id}`
           )
         }
       >
         <div className='questio'>
-          <h5 style={{ marginRight: '2vmax', fontSize: '1vmax' }}>o votes</h5>
-          <h5 style={{ marginRight: '2vmax', fontSize: '1vmax' }}>o answers</h5>
+          <h5 style={{ marginRight: '2vmax', fontSize: '1vmax' }}>{votes} votes</h5>
+          <h5 style={{ marginRight: '2vmax', fontSize: '1vmax' }}>{answers} answers</h5>
           <div className='que'>
-            <h5 style={{ marginRight: '2vmax', fontSize: '1vmax' }}>1 view</h5>
+            <h5 style={{ marginRight: '2vmax', fontSize: '1vmax' }}>{views} views</h5>
           </div>
         </div>
         <div className='questi'>
@@ -25,7 +26,7 @@ export const Question = ({ text, tags, id }) => {
           <div style={{ color: 'blue', display: 'flex' }}>
             {tags.map((t) => (
               <>
-                <div className='tag'>{t}a</div>
+                <div className='tag'>{t.text}</div>
               </>
             ))}
 
@@ -38,7 +39,7 @@ export const Question = ({ text, tags, id }) => {
                   marginLeft: '5vmax',
                 }}
               >
-                rajesh
+                {}
               </span>
               <span
                 style={{
@@ -47,7 +48,7 @@ export const Question = ({ text, tags, id }) => {
                   marginLeft: '1vmax',
                 }}
               >
-                1 hour ago dec
+            <div style={{display:'flex'}}><Usercard id={userid}/>    1 hour ago dec</div>
               </span>
             </div>
           </div>

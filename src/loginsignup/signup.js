@@ -23,7 +23,7 @@ export const Signup = () => {
       alert.error(error)
     }
     if (isAuthenticated) {
-      alert.success('successfully registered')
+      navigate('/')
     }
   }, [dispatch, loading, isAuthenticated, user, error])
 

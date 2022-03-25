@@ -23,7 +23,7 @@ export const Login = () => {
       alert.error(error)
     }
     if (isAuthenticated) {
-      alert.success('successfully logged in')
+      navigate('/')
     }
   }, [dispatch, loading, isAuthenticated, user, error])
 
