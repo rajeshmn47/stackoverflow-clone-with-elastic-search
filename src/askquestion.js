@@ -66,8 +66,7 @@ Show some code</h5>
 <button style={{marginLeft:'10vmax',marginTop:'2vmax'}} onClick={(e)=>handlesubmit(e)} type='submit'
 className='askquestion'>Review Your Question</button>
 </div>
-<iframe style={{marginLeft:'25vw'}} src='https://www.dailymotion.com/embed/video/x6gob96' alt='' width='600' height='500'></iframe>
-        </>
+       </>
     )
 }
 export default Askquestion

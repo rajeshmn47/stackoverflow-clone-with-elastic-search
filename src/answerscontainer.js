@@ -18,6 +18,9 @@ import MarkdownEditor from './Markdown'
 import Usercard from './Usercard'
 import { useAlert } from 'react-alert'
 import Answer from './answers'
+import bottomicon from './images/bottomdown.jpeg'
+import upicon from './images/upperup.jpeg'
+
 
 export const Answerscontainer = ({props,ref}) => {
   const {user,isAuthenticated,loading,error}=useSelector(
@@ -101,27 +104,38 @@ export const Answerscontainer = ({props,ref}) => {
     <div className='containeranswers'>
       {question?<>
       <div className='answercontainer'>
+    
 <h1 style={{fontSize:'3vmax'}}>{question?.title}</h1>
 <p style={{fontSize:'1vmax'}}>Asked  <span style={{opacity:'0.5',marginRight:'3vw'}}>{format(question?.created)}</span> 
 Modified  <span style={{opacity:'0.5',marginRight:'3vw'}}>{format(question?.created)}</span> 
 Views  <span style={{opacity:'0.5',marginRight:'3vw'}}>{question?.views}</span></p>
       </div>
       <div className='answers'>
-     
-        {question?.text}
+        <div style={{display:'flex',}}>
+        <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+        <img src={upicon} alt='' width='40' />
+        <h1 style={{fontSize:'3vmax',opacity:'0.7'}}>{question?.votes.length}</h1>
+        <img src={bottomicon} alt='' width='40'/>
+        </div>
+        <div style={{minHeight:'15vh',display:'flex',flexDirection:'column',justifyContent:'center'}}>
+        <p>   {question?.text}</p>
         <div className='tagscontainer'>
         {question?.tags?.map((q)=>
         <div className='tag'>{q.text}</div>)}
         </div>
-      <div style={{display:'flex',justifyContent:'space-between'}}>
+        <div style={{display:'flex',justifyContent:'space-between',width:'50vw',marginTop:'3vmax'}}>
   <p style={{opacity:'0.7'}}> share edit follow</p>
   <Usercard id={question?.author}/>
   </div>
-  
+ 
       </div>
+        </div>
+        </div>
+       
       <div>
+       <h1 style={{fontSize:'2vmax',margin:'3vmax 0vmax'}}>{question.answers.length} Answers</h1>
 {question?.answers.length>0?question.answers.map((q)=><>
-            <Answer answer={(q.text.slice(3,q.text.length-4))} id={q.author}/>
+            <Answer answer={(q.text.slice(3,q.text.length-4))} id={q.author} ans={q}/>
             </>):null}
 </div>
 </>:<CircularProgress/>}

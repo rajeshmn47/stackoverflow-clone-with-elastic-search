@@ -102,19 +102,27 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  height: 17vh;
+ 
 }
 .questio{
 display: flex;
  width:15vw;
  align-items: flex-end;
 flex-direction: column;
+height: 12vh;
+justify-content: space-evenly;
 }
 .tag{
   background-color: #E1ECF4;
   padding: 1px 3px;
   margin-right: 1vmax;
+  height: 1.5vmax;
   font-size: 1vmax;
   color:blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .overflowblog{
   height: 80vh;
@@ -131,5 +139,7 @@ flex-direction: column;
   display:flex;
  flex-direction: column;
  width: 30vw;
+ height: 12vh;
+ justify-content: space-evenly;
  }
  
