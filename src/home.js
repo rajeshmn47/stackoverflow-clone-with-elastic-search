@@ -71,7 +71,7 @@ export const Home = () => {
             questions?.map((q) => (
               <>
                 <Question text={q.text} tags={q.tags} id={q._id} userid={q.author} 
-                answers={q.answers.length} votes={q.votes} views={q.views}/>
+                answers={q.answers.length} votes={q.votes} views={q.views} createdat={q.created}/>
               </>
             ))}
         </div>

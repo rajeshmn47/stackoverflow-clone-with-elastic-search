@@ -2,8 +2,9 @@ import { useNavigate } from 'react-router-dom'
 import Usercard from './Usercard'
 import bottomicon from './images/bottomdown.jpeg'
 import upicon from './images/upperup.jpeg'
+import {format} from 'timeago.js'
 
-export const Question = ({ text, tags, id,userid,answers,views,votes }) => {
+export const Question = ({ text, tags, id,userid,answers,views,votes,createdat }) => {
   const navigate = useNavigate()
   return (
     <>
@@ -50,7 +51,9 @@ export const Question = ({ text, tags, id,userid,answers,views,votes }) => {
                   marginLeft: '1vmax',
                 }}
               >
-            <div style={{display:'flex'}}><Usercard id={userid}/>    1 hour ago dec</div>
+            <div style={{display:'flex'}}><Usercard id={userid}/>    <p style={{marginLeft:'1vmax'}}>
+          {format(createdat)}
+              </p></div>
               </span>
             </div>
           </div>

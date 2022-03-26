@@ -135,7 +135,7 @@ Views  <span style={{opacity:'0.5',marginRight:'3vw'}}>{question?.views}</span><
       <div>
        <h1 style={{fontSize:'2vmax',margin:'3vmax 0vmax'}}>{question.answers.length} Answers</h1>
 {question?.answers.length>0?question.answers.map((q)=><>
-            <Answer answer={(q.text.slice(3,q.text.length-4))} id={q.author} ans={q}/>
+            <Answer answer={(q.text.slice(3,q.text.length-4))} id={q.author} ans={q} questionid={question._id}/>
             </>):null}
 </div>
 </>:<CircularProgress/>}

@@ -119,10 +119,11 @@ justify-content: space-evenly;
   margin-right: 1vmax;
   height: 1.5vmax;
   font-size: 1vmax;
-  color:blue;
+  color:hsl(205,47%,42%);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0vmax 1vmax;
 }
 .overflowblog{
   height: 80vh;
@@ -138,7 +139,7 @@ justify-content: space-evenly;
 .questi{
   display:flex;
  flex-direction: column;
- width: 30vw;
+ width: 40vw;
  height: 12vh;
  justify-content: space-evenly;
  }
