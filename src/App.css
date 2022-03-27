@@ -169,6 +169,7 @@ justify-content: space-evenly;
   width: 100%;
   z-index: 1000000;
   justify-content: flex-start;
+  padding: 1vmax;
    }
    .home{
   margin-left: 0;

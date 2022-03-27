@@ -4,6 +4,7 @@ import {useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import {loadUser} from './actions/userAction'
 import MenuIcon from '@material-ui/icons/Menu';
+import Krawer from './Drawer'
 
 export const Navbar=()=>{
     const navigate=useNavigate()
@@ -22,7 +23,7 @@ export const Navbar=()=>{
 
 
 <div className="navbar flex align-center justify-center">
-<div className='menuicon'><MenuIcon/></div>
+<div className='menuicon'><Krawer/></div>
     <img src={stack}  alt='stacl' className='image'/>
     <h5 className='m-1 stackoverflow'>Stack<span className='font-bold'>Overflow</span></h5>
    

@@ -139,13 +139,14 @@ Modified  <span style={{opacity:'0.5',marginRight:'3vw'}}>{format(question?.crea
 Views  <span style={{opacity:'0.5',marginRight:'3vw'}}>{question?.views}</span></p>
       </div>
       <div className='answers'>
-        <div style={{display:'flex',}}>
-        <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',marginRight:'1vmax'}}>
+        <div style={{display:'flex',alignItems:'flex-start'}}>
+        <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',marginRight:'2vmax'}}>
         <div className={voted==='upvoted'?'votedarrow-up':'arrow-up'} onClick={()=>increasevotes(id,question._id)} />
         <h1 style={{fontSize:'2vmax',opacity:'0.7'}}>{question?.votes.length}</h1>
         <div className={voted==='downvoted'?'votedarrow-down':'arrow-down'} onClick={()=>decreasevotes(id,question._id)} />
         </div>
-        <div style={{minHeight:'15vh',display:'flex',flexDirection:'column',justifyContent:'center'}}>
+        <div style={{minHeight:'15vh',display:'flex',flexDirection:'column',justifyContent:'flexStart',
+      alignItems:'flexStart'}}>
         <p>   {question?.text}</p>
         <div className='tagscontainer'>
         {question?.tags?.map((q)=>
