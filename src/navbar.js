@@ -3,6 +3,7 @@ import stack from './images/stackoverflow.jpeg'
 import {useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import {loadUser} from './actions/userAction'
+import MenuIcon from '@material-ui/icons/Menu';
 
 export const Navbar=()=>{
     const navigate=useNavigate()
@@ -21,16 +22,18 @@ export const Navbar=()=>{
 
 
 <div className="navbar flex align-center justify-center">
-    <img src={stack}  alt='stacl'/>
-    <h5 className='m-1'>Stack<span className='font-bold'>Overflow</span></h5>
+<div className='menuicon'><MenuIcon/></div>
+    <img src={stack}  alt='stacl' className='image'/>
+    <h5 className='m-1 stackoverflow'>Stack<span className='font-bold'>Overflow</span></h5>
+   
     <p className='opacity-50 m-1'>Products</p>
-    <div className='bg-white w-1/2 height-5 p-1 m-2 border-2 border-white-600'>
+    <div className='navbarinputcontainer'>
         <SearchIcon style={{opacity:'0.5'}}/>
-    <input className="w-30 h-5 navbarinput" placeholder="search..."/>
+    <input className="navbarinput" placeholder="search..."/>
     </div>
-    {user?.username?<><div style={{marginLeft:'1vmax',width:'15vw',display:'flex',alignItems:'center',justifyContent:'space-evenly'}}>
-    <button className='loginbtn' onClick={()=>logout()} >Logout</button>
-    <h5>{user.username}</h5>
+    {user?.username?<><div className='auth'>
+    <button className='loginbtn logout' onClick={()=>logout()} >Logout</button>
+    <h5 className='username'>{user.username}</h5>
     <img src={user.profilePhoto} alt='' width='20'/>
     </div>
     </>:

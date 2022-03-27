@@ -18,8 +18,8 @@ export const Home = () => {
   }, [])
   return (
     <>
-      <div className='flex justify-between m-50 p-2 home'>
-        <div className='w-1/5 homeone'>
+      <div className='home'>
+        <div className='homeone'>
           <div className='homebtn'>
             <h2>Home</h2>
           </div>
@@ -29,10 +29,10 @@ export const Home = () => {
           <h1 className='ml-3 opacity-50 flex content-center'>
             <PublicIcon /> Questions
           </h1>
-          <h1 style={{ margin: '1vmax 3vmax', fontSize: '1vmax' }}>Tags</h1>
-          <h1 style={{ margin: '1vmax 3vmax', fontSize: '1vmax' }}>Users</h1>
+          <h1 style={{ margin: '1vmax 3vmax',}}>Tags</h1>
+          <h1 style={{ margin: '1vmax 3vmax',}}>Users</h1>
           <h1 className='ml-3 opacity-50 flex content-center'>COLLECTIVES</h1>
-          <h1 style={{ margin: '1vmax 3vmax', fontSize: '1vmax' }}>
+          <h1 style={{ margin: '1vmax 3vmax', }}>
             Explore Collectives
           </h1>
 
@@ -44,7 +44,7 @@ export const Home = () => {
           <h1 className='ml-3 opacity-50 flex content-center'>TEAMS</h1>
           <h1 style={{ margin: '1vmax 3vmax', fontSize: '1vmax' }}>Jobs</h1>
         </div>
-        <div className='w-2/3'>
+        <div className='homemiddle'>
           <div>
             <div className='topcontainer'>
               <div className='topcontainerbottom'>
@@ -113,7 +113,7 @@ export const Home = () => {
           </div>
         </div>
       </div>
-    </>
+   </>
   )
 }
 export default Home

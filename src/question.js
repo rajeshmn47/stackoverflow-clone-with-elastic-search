@@ -17,10 +17,10 @@ export const Question = ({ text, tags, id,userid,answers,views,votes,createdat }
         }
       >
         <div className='questio'>
-          <h5 style={{ marginRight: '2vmax', fontSize: '1vmax' }}>{votes} votes</h5>
-          <h5 style={{ marginRight: '2vmax', fontSize: '1vmax' }}>{answers} answers</h5>
+          <h5 style={{ marginRight: '2vw', }}>{votes} votes</h5>
+          <h5 style={{ marginRight: '2vw', }}>{answers} answers</h5>
           
-            <h5 style={{ marginRight: '2vmax', fontSize: '1vmax' }}>{views} views</h5>
+            <h5 style={{ marginRight: '2vw',  }}>{views} views</h5>
       
         </div>
         <div className='questi'>
@@ -51,7 +51,9 @@ export const Question = ({ text, tags, id,userid,answers,views,votes,createdat }
                   marginLeft: '1vmax',
                 }}
               >
-            <div style={{display:'flex'}}><Usercard id={userid}/>    <p style={{marginLeft:'1vmax'}}>
+            <div style={{display:'flex',alignItems:'center'}}>
+              <Usercard id={userid}/>    
+              <p style={{marginLeft:'1vmax'}}>
           {format(createdat)}
               </p></div>
               </span>

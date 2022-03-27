@@ -27,6 +27,8 @@ export const Answerscontainer = ({props,ref}) => {
     (state) => state.user
   );
   const alert=useAlert()
+  const[votes,setVotes]=useState()
+const[voted,setVoted]=useState()
   const [formData,setFormData]=useState()
   const [value, setValue] = useState()
   const markdownEditorRef =useRef(null)
@@ -40,7 +42,7 @@ export const Answerscontainer = ({props,ref}) => {
     const { data } = await axios.get(
       `http://localhost:8000/question/getonequestion/${id.id}`
     )
-    console.log(data.question.answers[0].text)
+    console.log(data?.question?.answers[0]?.text)
     setQuestion(data.question)
   }, [id])
   const handlesubmit = async (e) => {
@@ -51,6 +53,11 @@ export const Answerscontainer = ({props,ref}) => {
     await axios.post('http://localhost:8000/question/postanswer',
     {questionid:id.id,authorid:user._id,text:text})
     alert.success('posted succesfully')
+    const { data } = await axios.get(
+      `http://localhost:8000/question/getonequestion/${id.id}`
+    )
+    console.log(data?.question?.answers[0]?.text)
+    setQuestion(data.question)
     }
     else{
       alert.error('please login')
@@ -64,7 +71,28 @@ export const Answerscontainer = ({props,ref}) => {
   const updateConvertedContent = (htmlConvertedContent) => {
     setText(htmlConvertedContent);
   };
-
+  const increasevotes=(id,questionid)=>{
+    console.log(id,questionid)
+    if(!(voted==='upvoted')){
+    setVotes(votes+1)
+    setVoted('upvoted')
+    }
+    else{
+        setVotes(votes-1)
+        setVoted()
+    }
+     }
+     const decreasevotes=(id,questionid)=>{
+    console.log(id,questionid)
+    if(!(voted==='downvoted')){
+        setVotes(votes-1)
+        setVoted('downvoted')
+        }
+        else{
+            setVotes(votes+1)
+            setVoted()
+        }
+     }
   const toolbarConfig = {
     // Optionally specify the groups to display (displayed in the order listed).
     display: [
@@ -112,10 +140,10 @@ Views  <span style={{opacity:'0.5',marginRight:'3vw'}}>{question?.views}</span><
       </div>
       <div className='answers'>
         <div style={{display:'flex',}}>
-        <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
-        <img src={upicon} alt='' width='40' />
-        <h1 style={{fontSize:'3vmax',opacity:'0.7'}}>{question?.votes.length}</h1>
-        <img src={bottomicon} alt='' width='40'/>
+        <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',marginRight:'1vmax'}}>
+        <div className={voted==='upvoted'?'votedarrow-up':'arrow-up'} onClick={()=>increasevotes(id,question._id)} />
+        <h1 style={{fontSize:'2vmax',opacity:'0.7'}}>{question?.votes.length}</h1>
+        <div className={voted==='downvoted'?'votedarrow-down':'arrow-down'} onClick={()=>decreasevotes(id,question._id)} />
         </div>
         <div style={{minHeight:'15vh',display:'flex',flexDirection:'column',justifyContent:'center'}}>
         <p>   {question?.text}</p>
@@ -134,8 +162,8 @@ Views  <span style={{opacity:'0.5',marginRight:'3vw'}}>{question?.views}</span><
        
       <div>
        <h1 style={{fontSize:'2vmax',margin:'3vmax 0vmax'}}>{question.answers.length} Answers</h1>
-{question?.answers.length>0?question.answers.map((q)=><>
-            <Answer answer={(q.text.slice(3,q.text.length-4))} id={q.author} ans={q} questionid={question._id}/>
+{question?.answers.length>0?question?.answers?.map((q)=><>
+            <Answer answer={(q?.text?.slice(3,q?.text?.length-4))} id={q?.author} ans={q} questionid={question._id}/>
             </>):null}
 </div>
 </>:<CircularProgress/>}
@@ -151,7 +179,6 @@ Views  <span style={{opacity:'0.5',marginRight:'3vw'}}>{question?.views}</span><
       </div>
       <Rightbar/>
       </div>
-
     </>
   )
 }

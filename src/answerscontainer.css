@@ -46,3 +46,37 @@
     margin-top:2vmax;
     border-bottom:1px solid rgb(220, 220, 220);
 }
+.voted{
+    background-color: tomato;
+}
+.votedarrow-down {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #f00;
+}
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid rgb(161, 161, 161);
+}
+.votedarrow-up {
+    border-width: 0px 15px 15px 15px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #f00;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-width: 0px 15px 15px 15px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid rgb(161, 161, 161);
+}

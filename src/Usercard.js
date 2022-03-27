@@ -11,9 +11,10 @@ setUser(data.data.message)
     },[])
     return(
 <>
-<div style={{display:'flex'}}>
-{user?.username}
+<div style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+
 <img style={{marginLeft:'1vmax'}} src={user?.profilePhoto} alt=''  width='20'/>
+<p style={{marginLeft:'1vmax'}}>{user?.username}</p>
 </div>
 </>
     )
