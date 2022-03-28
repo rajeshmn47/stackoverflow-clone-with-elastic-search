@@ -16,7 +16,7 @@ export const Askquestion=()=>{
 const handlesubmit= async(e)=>{
     e.preventDefault()
     console.log(tags)
-  await  axios.post('http://localhost:8000/question/question',
+  await  axios.post('https://stackoverflowclonerajesh.herokuapp.com/question/question',
   {title:title,tags:tags,author:user._id,text:text})
   alert.success('posted succesfully')
   setTitle()
@@ -39,9 +39,10 @@ className='inputtitle' value={title} onChange={(e)=>setTitle(e.target.value)}/>
 <h2>Tags</h2>
 <p style={{fontSize:'1vmax'}}>Add up to 5 tags to describe what your question is about</p>
 <Taginput tags={tags} setTags={setTags}/>
-<button style={{marginLeft:'10vmax',marginTop:'2vmax'}} onClick={(e)=>handlesubmit(e)} type='submit'
-className='askquestion responsive'>Review Your Question</button>
+
 </div>
+<button style={{marginLeft:'10vmax',marginTop:'2vmax'}} onClick={(e)=>handlesubmit(e)} type='submit'
+className='askquestionresponsive'>Review Your Question</button>
 <div>
 <div className="procedure">
 <div className='procedureheading'><h2>Step 1:Draft your question</h2></div>

@@ -5,7 +5,9 @@
 }
 .askquestion{
     display: flex;
-
+}
+.askquestionresponsive{
+    display: none;
 }
 .askquestions{
     background-color: #E3E6E8;
@@ -99,5 +101,19 @@ width: 90vw;
 }
 .questionform{
     width: 100%;
+}
+.askquestion{
+    display: none;
+}
+.askquestionresponsive{
+    display: block;
+    outline: none;
+    border: none;
+    background-color:#0A95FF;
+    color: white;
+    padding: 5px;
+    font-size: small;
+    margin-right: 10vmax;
+    margin-left: 0;
 }
 }

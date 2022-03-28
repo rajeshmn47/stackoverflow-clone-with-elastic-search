@@ -46,7 +46,7 @@ const[voted,setVoted]=useState()
   useEffect(async () => {
     console.log(id)
     const { data } = await axios.get(
-      `http://localhost:8000/question/getonequestion/${id.id}`
+      `https://stackoverflowclonerajesh.herokuapp.com/question/getonequestion/${id.id}`
     )
     console.log(data?.question?.answers[0]?.text)
     setQuestion(data.question)
@@ -56,11 +56,11 @@ const[voted,setVoted]=useState()
     try{
     if(user){
     console.log(user._id,'postanswer')
-    await axios.post('http://localhost:8000/question/postanswer',
+    await axios.post('https://stackoverflowclonerajesh.herokuapp.com/question/postanswer',
     {questionid:id.id,authorid:user._id,text:text})
     alert.success('posted succesfully')
     const { data } = await axios.get(
-      `http://localhost:8000/question/getonequestion/${id.id}`
+      `https://stackoverflowclonerajesh.herokuapp.com/question/getonequestion/${id.id}`
     )
     console.log(data?.question?.answers[0]?.text)
     setQuestion(data.question)

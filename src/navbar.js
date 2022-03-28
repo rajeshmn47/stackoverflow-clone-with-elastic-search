@@ -5,6 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import {loadUser} from './actions/userAction'
 import MenuIcon from '@material-ui/icons/Menu';
 import Krawer from './drawer'
+import React from 'react';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 export const Navbar=()=>{
     const navigate=useNavigate()
@@ -12,7 +15,18 @@ export const Navbar=()=>{
     const {user,isAuthenticated,loading,error}=useSelector(
         (state) => state.user
       );
+      const [anchorEl, setAnchorEl] = React.useState(null);
 
+      const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+      };
+    
+      const handleClose = () => {
+        setAnchorEl(null);
+        localStorage.removeItem('server_token')
+        dispatch(loadUser())
+        navigate('/')
+      };
       const logout=()=>{
         localStorage.removeItem('server_token')
         dispatch(loadUser())
@@ -33,7 +47,23 @@ export const Navbar=()=>{
     <input className="navbarinput" placeholder="search..."/>
     </div>
     {user?.username?<><div className='authresponsive'>
-  <img src={user.profilePhoto} alt='' width='20'/>
+
+  <div style={{display:'flex',alignItems:'center'}}>
+      <SearchIcon style={{opacity:'0.5'}}/>
+  <img src={user.profilePhoto} alt='' width='20' onClick={handleClick} style={{marginLeft:'1vmax'}}/>
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+        style={{zIndex:'102222222222222222222222222222222222222222222222222222'}}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
+      </Menu>
+    </div>
   </div>
   </>:
   <>

@@ -19,7 +19,7 @@ export const postanswer = (myform) => async (dispatch) => {
     console.log(myform)
     dispatch({ type: QUESTION_ANSWER_REQUEST })
     const { data } = await axios.post(
-      'http://localhost:8000/question/postanswer',
+      'https://stackoverflowclonerajesh.herokuapp.com/question/postanswer',
       { myform }
     )
     console.log(data)

@@ -37,11 +37,11 @@ console.log(id,questionid)
 if(!(voted==='upvoted')){
 setVotes(votes+1)
 setVoted('upvoted')
-axios.post(`http://localhost:8000/question/upvoteanswer/${questionid}`,
+axios.post(`https://stackoverflowclonerajesh.herokuapp.com/question/upvoteanswer/${questionid}`,
 {user:user._id,vote:1,answerid:ans._id})
 }
 else{
-    axios.post(`http://localhost:8000/question/upvoteanswer/${questionid}`,
+    axios.post(`https://stackoverflowclonerajesh.herokuapp.com/question/upvoteanswer/${questionid}`,
 {user:user._id,vote:-1,answerid:ans._id})
 
     setVotes(votes-1)
@@ -53,11 +53,11 @@ console.log(id,questionid)
 if(!(voted==='downvoted')){
     setVotes(votes-1)
     setVoted('downvoted')
-    axios.post(`http://localhost:8000/question/upvoteanswer/${questionid}`,
+    axios.post(`https://stackoverflowclonerajesh.herokuapp.com/question/upvoteanswer/${questionid}`,
 {user:user._id,vote:-1,answerid:ans._id})
     }
     else{
-        axios.post(`http://localhost:8000/question/upvoteanswer/${questionid}`,
+        axios.post(`https://stackoverflowclonerajesh.herokuapp.com/question/upvoteanswer/${questionid}`,
         {user:user._id,vote:1,answerid:ans._id})
         setVotes(votes+1)
         setVoted()

@@ -11,7 +11,7 @@ export const Home = () => {
   const [questions, setQuestions] = useState([])
   useEffect(async () => {
     const { data } = await axios.get(
-      'http://localhost:8000/question/getquestions'
+      'https://stackoverflowclonerajesh.herokuapp.com/question/getquestions'
     )
     console.log(data)
     setQuestions(data.questions)
@@ -49,7 +49,7 @@ export const Home = () => {
             <div className='topcontainer'>
               <div className='topcontainerbottom'>
                 <h1>Top Questions</h1>
-                <button className='askquestion' onClick={()=>navigate('/askquestion')}>Ask Question</button>
+                <button className='askque' onClick={()=>navigate('/askquestion')}>Ask Question</button>
               </div>
               <div>
                 <div className='box'>

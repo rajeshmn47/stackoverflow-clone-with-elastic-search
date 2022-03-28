@@ -17,7 +17,7 @@ export default function Logingoogle() {
 
     const onGoogleSuccess = async (response) => {
         const access_token = response.tokenId;
-const {data}=await axios.post('http://localhost:8000/auth/googlelogin',{tokenId:access_token})
+const {data}=await axios.post('https://stackoverflowclonerajesh.herokuapp.com/auth/googlelogin',{tokenId:access_token})
     console.log(data)
     localStorage.setItem("server_token",data.server_token);
     }

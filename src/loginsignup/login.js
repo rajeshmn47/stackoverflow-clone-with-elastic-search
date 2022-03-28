@@ -38,7 +38,7 @@ export const Login = () => {
     <>
       <div className='signup'>
         <div className='signupbox'>
-          <div className='sociallogin google'>
+          <div className='sociallogin google' onClick={()=>navigate('/googlelogin')}>
             <img src={google} alt='' style={{ marginRight: '5px' }} />
             Sign up with google
           </div>

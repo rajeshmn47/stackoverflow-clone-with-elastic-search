@@ -14,7 +14,8 @@
 }
 .auth{
 margin-left:1vmax;
-width:15vw;display:'flex';
+width:20vw;
+display:'flex';
 align-items:center;
 justify-content:space-evenly;
 }
@@ -86,6 +87,15 @@ justify-content:space-evenly;
   padding:2px 6px;
   font-size: 1vmax;
 }
+.askque{
+  outline: none;
+  border: none;
+  background-color:#0A95FF;
+  color: white;
+  padding: 5px;
+  font-size: small;
+  margin-right: 1vmax;
+}
 .askquestion{
   outline: none;
   border: none;
@@ -137,7 +147,7 @@ justify-content: space-evenly;
   background-color: #E1ECF4;
   padding: 1px 3px;
   margin-right: 1vmax;
-  height: 1.5vmax;
+  height:25px;
   
   color:hsl(205,47%,42%);
   display: flex;
@@ -239,6 +249,7 @@ position: absolute;
    margin-left: 0;
    padding: 1vmax;
    justify-content: center;
+   height: 15vh;
    box-sizing: border-box;
   }
   .questio{
