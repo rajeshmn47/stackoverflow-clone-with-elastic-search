@@ -3,11 +3,13 @@ import stack from './images/stackoverflow.jpeg'
 import {useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import {loadUser} from './actions/userAction'
-import MenuIcon from '@material-ui/icons/Menu';
-import Krawer from './drawer'
 import React from 'react';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import React from 'react';
+import Drawer from '@material-ui/core/Drawer';
+import MenuIcon from '@material-ui/icons/Menu';
+import PublicIcon from '@material-ui/icons/Public'
 
 export const Navbar=()=>{
     const navigate=useNavigate()
@@ -16,6 +18,15 @@ export const Navbar=()=>{
         (state) => state.user
       );
       const [anchorEl, setAnchorEl] = React.useState(null);
+      const [open, setOpen] = React.useState(false);
+      const toggleDrawer = (open) => (event) => {
+       setOpen(false)
+      };
+    
+      
+    const handleclick=()=>{
+    setOpen(!open)
+    }
 
       const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -37,7 +48,37 @@ export const Navbar=()=>{
 
 
 <div className="navbar flex align-center justify-center">
-<div className='menuicon'><Krawer/></div>
+<div className='menuicon'>  <div >
+    
+        
+    <MenuIcon onClick={()=>handleclick()}/>
+    <Drawer style={{height:'100vh'}} anchor='top' open={open} onClose={toggleDrawer(false)}>
+    <div style={{marginTop:'10vmax'}}>
+  <div>
+    <h2 style={{margin: '1vmax 1vmax',opacity:'0.5'}}>Home</h2>
+  </div>
+  <h5 style={{ margin: '1vmax 1vmax' }} className='ml-3 opacity-50'>
+    Public
+  </h5>
+  <h1 className='ml-3 opacity-50 flex content-center'>
+    <PublicIcon /> Questions
+  </h1>
+  <h1 style={{ margin: '1vmax 3vmax', fontSize: '1vmax' }}>Tags</h1>
+  <h1 style={{ margin: '1vmax 3vmax', fontSize: '1vmax' }}>Users</h1>
+  <h1 className='ml-3 opacity-50 flex content-center'>COLLECTIVES</h1>
+  <h1 style={{ margin: '1vmax 3vmax', fontSize: '1vmax' }}>
+    Explore Collectives
+  </h1>
+
+  <h1 className='ml-3 opacity-50 flex content-center'>FIND A JOB</h1>
+  <h1 style={{ margin: '1vmax 3vmax', fontSize: '1vmax' }}>Jobs</h1>
+  <h1 style={{ margin: '1vmax 3vmax', fontSize: '1vmax' }}>Companies</h1>
+  <h1 className='ml-3 opacity-50 flex content-center'>TEAMS</h1>
+  <h1 style={{ margin: '1vmax 3vmax', fontSize: '1vmax' }}>Jobs</h1>
+</div>
+    </Drawer>
+
+</div></div>
     <img src={stack}  alt='stacl' className='image'/>
     <h5 className='m-1 stackoverflow'>Stack<span className='font-bold'>Overflow</span></h5>
    
