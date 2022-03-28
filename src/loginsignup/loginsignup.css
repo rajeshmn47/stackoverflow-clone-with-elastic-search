@@ -2,10 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width:100vw;
+    width:96.5vw;
     height: 100vh;
     background-color: #F1F2F3;
-    padding: 5vmax;
+    box-sizing: border-box;
 }
 .joint{
 font-size: 2vmax;
@@ -20,6 +20,7 @@ border-radius: 5px;
     padding: 2vmax;
     width: 25vw;
     height: 60vh;
+    box-sizing: border-box;
 }
 .loginform{
     display: flex;
@@ -30,6 +31,7 @@ border-radius: 5px;
     padding: 2vmax;
     width: 25vw;
     height: 40vh;
+    box-sizing: border-box;
 }
 .joinone{
     margin-top: 1vmax;
@@ -45,12 +47,17 @@ border-radius: 5px;
     width: 21vw;
     height: 5vh;
     padding-left: 5px;
+    box-sizing: border-box;
 }
 .submitbutton{
     background-color: #0A95FF;
     color: white;
     padding: 0.5vmax;
     border-radius: 5px;
+    width: 100%;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
 }
 .sociallogin{
     width: 25vw;
@@ -60,6 +67,7 @@ justify-content: center;
     border-radius: 5px;
     padding: 0.5vmax;
     margin:1vmax 0vmax;
+    box-sizing: border-box;
 }
 .git{
     background-color: #2F3337;
@@ -94,6 +102,8 @@ justify-content: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    outline: none;
+    box-sizing: border-box;
 }
 @media (max-width: 768px) {
 .signup{
@@ -120,10 +130,13 @@ width: 70vw;
     flex-direction: column;
     align-items: center;
     height: auto;
-    margin: 1vmax 7vmax;
+  
 }
 .loginform{
     width: 100%;
     margin-bottom: 1vmax;
+}
+.submitbutton{
+    width:100%;
 }
 }
