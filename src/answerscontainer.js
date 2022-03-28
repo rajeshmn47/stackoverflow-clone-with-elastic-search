@@ -20,9 +20,14 @@ import { useAlert } from 'react-alert'
 import Answer from './answers'
 import bottomicon from './images/bottomdown.jpeg'
 import upicon from './images/upperup.jpeg'
+import Drawer from '@material-ui/core/Drawer';
+import MenuIcon from '@material-ui/icons/Menu';
+
+
 
 
 export const Answerscontainer = ({props,ref}) => {
+
   const {user,isAuthenticated,loading,error}=useSelector(
     (state) => state.user
   );
@@ -36,6 +41,7 @@ const[voted,setVoted]=useState()
   const id = useParams()
   const[question,setQuestion]=useState()
   const[text,setText]=useState()
+  const[open,setOpen]=useState(false)
 
   useEffect(async () => {
     console.log(id)
@@ -125,6 +131,7 @@ const[voted,setVoted]=useState()
       },
     ],
   };
+
   return (
     <>
       <div className='flex justify-between m-50 p-2 home'>
@@ -180,6 +187,7 @@ Views  <span style={{opacity:'0.5',marginRight:'3vw'}}>{question?.views}</span><
       </div>
       <Rightbar/>
       </div>
+   
     </>
   )
 }

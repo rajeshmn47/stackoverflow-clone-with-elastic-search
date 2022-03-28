@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import Logingoogle from './loginsignup/googlesignin'
 import Answerscontainer from './answerscontainer'
+import Footer from './footer'
 
 function App() {
   const dispatch = useDispatch()
@@ -34,6 +35,7 @@ function App() {
           <Route path='/googlelogin' element={<Logingoogle />} />
           <Route path='/answers/:id' element={<Answerscontainer />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </>
   )

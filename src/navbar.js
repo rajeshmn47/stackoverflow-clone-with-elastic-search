@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import {loadUser} from './actions/userAction'
 import MenuIcon from '@material-ui/icons/Menu';
-import Krawer from './Drawer'
+import Krawer from './drawer'
 
 export const Navbar=()=>{
     const navigate=useNavigate()
@@ -32,15 +32,29 @@ export const Navbar=()=>{
         <SearchIcon style={{opacity:'0.5'}}/>
     <input className="navbarinput" placeholder="search..."/>
     </div>
+    {user?.username?<><div className='authresponsive'>
+  <img src={user.profilePhoto} alt='' width='20'/>
+  </div>
+  </>:
+  <>
+  <div className='authresponsive'>
+  <button className='loginbtn' onClick={()=>navigate('login')}>Login</button>
+  <button className='signupbtn' onClick={()=>navigate('/signup')}>Signup</button>
+  </div>
+  </>
+  }
     {user?.username?<><div className='auth'>
-    <button className='loginbtn logout' onClick={()=>logout()} >Logout</button>
+  
     <h5 className='username'>{user.username}</h5>
     <img src={user.profilePhoto} alt='' width='20'/>
+    <button className='loginbtn logout' onClick={()=>logout()} >Logout</button>
     </div>
     </>:
     <>
+    <div className='auth'>
     <button className='loginbtn' onClick={()=>navigate('login')}>Login</button>
     <button className='signupbtn' onClick={()=>navigate('/signup')}>Signup</button>
+    </div>
     </>
     }
 </div>

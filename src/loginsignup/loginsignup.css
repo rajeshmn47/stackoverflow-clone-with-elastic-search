@@ -95,3 +95,35 @@ justify-content: center;
     justify-content: center;
     align-items: center;
 }
+@media (max-width: 768px) {
+.signup{
+    height: auto;
+    flex-direction: column-reverse;
+ padding: 0;
+
+}
+.signupform{
+width: 70vw;
+}
+.signupbox{
+    margin-top: 10vh;
+}
+.sociallogin{
+    width: 100%;
+}
+.inputs{
+    width: 100%;
+}
+.joinup{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin: 1vmax 7vmax;
+}
+.loginform{
+    width: 100%;
+    margin-bottom: 1vmax;
+}
+}

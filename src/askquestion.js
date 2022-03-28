@@ -19,6 +19,9 @@ const handlesubmit= async(e)=>{
   await  axios.post('http://localhost:8000/question/question',
   {title:title,tags:tags,author:user._id,text:text})
   alert.success('posted succesfully')
+  setTitle()
+  setTags()
+  setText()
 }
     return(
         <>
@@ -36,6 +39,8 @@ className='inputtitle' value={title} onChange={(e)=>setTitle(e.target.value)}/>
 <h2>Tags</h2>
 <p style={{fontSize:'1vmax'}}>Add up to 5 tags to describe what your question is about</p>
 <Taginput tags={tags} setTags={setTags}/>
+<button style={{marginLeft:'10vmax',marginTop:'2vmax'}} onClick={(e)=>handlesubmit(e)} type='submit'
+className='askquestion responsive'>Review Your Question</button>
 </div>
 <div>
 <div className="procedure">

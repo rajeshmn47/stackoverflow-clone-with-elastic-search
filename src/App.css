@@ -22,6 +22,15 @@ justify-content:space-evenly;
   outline: none;
   border: none;
 }
+.navbarinputcontainer{
+  background-color: white;
+  width: 50vw;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(148, 147, 147);
+  border-radius: 2px;
+}
 .home{
   margin-top: 8.5vh;
   margin-left: 20.6vw;
@@ -52,7 +61,7 @@ justify-content:space-evenly;
   height: 100%;
   min-width: 5vw;
   padding: 5px;
-  font-size: 1vmax;
+
   opacity: 0.7;
   display: flex;
   align-items: center;
@@ -62,7 +71,6 @@ justify-content:space-evenly;
   height: 100%;
   min-width: 5vw;
   padding: 5px;
-  font-size: 1vmax;
   opacity: 0.7;
   display: flex;
   justify-content: center;
@@ -84,7 +92,7 @@ justify-content:space-evenly;
   background-color:#0A95FF;
   color: white;
   padding: 5px;
-  font-size: 1vmax;
+  font-size: small;
   margin-right: 1vmax;
 }
 .topcontainer{
@@ -138,7 +146,7 @@ justify-content: space-evenly;
   padding: 0vmax 1vmax;
 }
 .overflowblog{
-  height: 80vh;
+  height: 60vh;
 }
 .homebtn{
   background-color: #E3E6E8;
@@ -150,6 +158,35 @@ justify-content: space-evenly;
 }
 .footer{
   background-color: #232629;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2vmax;
+  height: 40vh;
+  z-index: 1000000000000000000000000000000000000000000000;
+position: absolute;
+  width: 100%;
+}
+.foot{
+  color:#9199A1;
+ font-size: 12px;
+  height: 35vh;
+
+}
+.lastfoot{
+  display: flex;
+  flex-direction: column;
+  color: #9199A1;
+  justify-content: space-between;
+  width: 20vw;
+}
+.foot h1{
+  font-size: 1.5vmax;
+  color: #D6D9DC;
+  font-weight: bold;
+}
+.auth{
+  display: flex;
+  justify-content: space-evenly;
 }
 .questi{
   display:flex;
@@ -158,13 +195,24 @@ justify-content: space-evenly;
  height: 12vh;
  justify-content: space-evenly;
  }
+ .menuicon{
+   display: none;
+ }
+ .lastfootdivone{
+   display: flex;
+   font-size: 12px;
+   justify-content: space-evenly;
+ }
+ .authresponsive{
+   display: none;
+ }
+
  @media (max-width: 768px) {
    .navbar{
   background-color: #F8F9F9;
   height: 8vmax;
   display:flex;
   align-items: center;
-  position:fixed;
   top: 0;
   width: 100%;
   z-index: 1000000;
@@ -191,6 +239,7 @@ justify-content: space-evenly;
    margin-left: 0;
    padding: 1vmax;
    justify-content: center;
+   box-sizing: border-box;
   }
   .questio{
     flex-direction: row;
@@ -199,6 +248,7 @@ justify-content: space-evenly;
     width: 100%;
     justify-content: flex-start;
     margin-top: 0;
+    box-sizing: border-box;
   }
   .questi{
     align-items: flex-start;
@@ -207,6 +257,7 @@ flex-direction: column;
 width: 100%;
 justify-content: flex-start;
 margin-top: 0;
+box-sizing: border-box;
   }
   .navbarinput{
     display: none;
@@ -219,17 +270,20 @@ height: 4vh;
  
   }
   .box{
-    width: 55vw;
+    width: 90vw;
+    margin-left: 1vw;
+    font-size: x-small;
   }
  .stackoverflow{
    display: none;
  }
+ .smallbox{
+   width: auto;
+ }
   .username{
     display: none;
   }
-  .loginbtn{
-    display: none;
-  }
+
   .logout{
     display: none;
   }
@@ -240,8 +294,38 @@ height: 4vh;
     display: block;
   }
   .overflowblog{
-    width: 100%;
-    height: 60vh;
+    width: 97%;
+    height: auto;
     margin-right: 5vmax;
+  }
+  .footer{
+    flex-direction: column;
+    height: 70vh;
+    justify-content: space-evenly;
+  }
+  .footft p{
+    margin-right: 2vmax;
+  }
+  .foot{
+    height: auto;
+  }
+  .footft{
+    display: flex;
+  flex-wrap: wrap;
+  }
+  .lastfootdivone{
+    width: 100%;
+  }
+  .lastfoot{
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 1vmax;
+  }
+  .first{
+    display: none;
+  }
+  .authresponsive{
+    display: flex;
   }
 }
