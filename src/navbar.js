@@ -3,7 +3,6 @@ import stack from './images/stackoverflow.jpeg'
 import {useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import {loadUser} from './actions/userAction'
-import React from 'react';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import React from 'react';
@@ -13,14 +12,14 @@ import PublicIcon from '@material-ui/icons/Public'
 
 export const Navbar=()=>{
     const navigate=useNavigate()
-    const dispatch=useDispatch()
+    const dispatch=useDispatch()     
     const {user,isAuthenticated,loading,error}=useSelector(
         (state) => state.user
       );
       const [anchorEl, setAnchorEl] = React.useState(null);
       const [open, setOpen] = React.useState(false);
       const toggleDrawer = (open) => (event) => {
-       setOpen(false)
+        setOpen(false)
       };
     
       
