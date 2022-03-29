@@ -77,6 +77,9 @@ if(!(voted==='downvoted')){
         </div>
         <div>
         <p>{answer}</p>
+        {user._id===ans.author.toString()?
+        <>
+        <button>edit</button><button>delete</button></>:null}
         </div>
         </div>
         <div style={{display:'flex',justifyContent:'space-between',opacity:'0.7',marginTop:'1.5vmax'}}>
