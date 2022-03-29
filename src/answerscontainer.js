@@ -155,9 +155,7 @@ Views  <span style={{opacity:'0.5',marginRight:'3vw'}}>{question?.views}</span><
         <div style={{minHeight:'15vh',display:'flex',flexDirection:'column',justifyContent:'flexStart',
       alignItems:'flexStart'}}>
         <p>   {question?.text}</p>
-        {user._id===question.author.toString()?
-        <>
-        <button>edit</button><button>delete</button></>:null}
+     
         <div className='tagscontainer'>
         {question?.tags?.map((q)=>
         <div className='tag'>{q.text}</div>)}
