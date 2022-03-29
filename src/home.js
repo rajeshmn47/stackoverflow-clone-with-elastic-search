@@ -78,7 +78,7 @@ export const Home = () => {
                 <Question text={q.text} tags={q.tags} id={q._id} userid={q.author} 
                 answers={q.answers.length} votes={q.votes} views={q.views} createdat={q.created}/>
               </>
-            )):<><CircularProgress/></>}
+            )):<CircularProgress/>}
         </div>
         <div className='w-1/4 border-2 border-orange-200 shadow-xl m-1 overflowblog'>
           <div className='bg-orange-200 p-2 text-sm font-bold'>
