@@ -174,7 +174,7 @@ Views  <span style={{opacity:'0.5',marginRight:'3vw'}}>{question?.views}</span><
             <Answer answer={(q?.text?.slice(3,q?.text?.length-4))} id={q?.author} ans={q} questionid={question._id}/>
             </>):null}
 </div>
-</>:<CircularProgress/>}
+</>:<div style={{display:'flex',width:'100vwvw',height:'100vh'}}><CircularProgress/></div>}
 <div>
   <h1 style={{fontSize:'2vmax'}}>Your Answer</h1>
   <form onSubmit={(e)=>handlesubmit(e)} className='answerform'>
