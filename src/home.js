@@ -5,6 +5,12 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Usercard from './Usercard'
 import { useNavigate } from 'react-router-dom'
+import {
+  CircularProgress,
+  createTheme,
+  makeStyles,
+  ThemeProvider,
+} from "@material-ui/core";
 
 export const Home = () => {
   const navigate=useNavigate()
@@ -67,13 +73,12 @@ export const Home = () => {
           </div>
 
           <div></div>
-          {questions &&
-            questions?.map((q) => (
+          {questions?questions?.map((q) => (
               <>
                 <Question text={q.text} tags={q.tags} id={q._id} userid={q.author} 
                 answers={q.answers.length} votes={q.votes} views={q.views} createdat={q.created}/>
               </>
-            ))}
+            )):<><CircularProgress/></>}
         </div>
         <div className='w-1/4 border-2 border-orange-200 shadow-xl m-1 overflowblog'>
           <div className='bg-orange-200 p-2 text-sm font-bold'>
