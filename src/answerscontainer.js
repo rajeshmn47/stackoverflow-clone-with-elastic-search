@@ -177,7 +177,7 @@ Views  <span style={{opacity:'0.5',marginRight:'3vw'}}>{question?.views}</span><
             <Answer answer={(q?.text?.slice(3,q?.text?.length-4))} id={q?.author} ans={q} questionid={question._id}/>
             </>):null}
 </div>
-</>:<div style={{display:'flex',width:'100vw',height:'100vh',alignItems:'center',justifyContent:'center'}}>
+</>:<div style={{display:'flex',width:'100vw',height:'100vh',alignItems:'center',justifyContent:'center',boxSizing:'border-box'}}>
   <CircularProgress/></div>}
 <div>
   <h1 style={{fontSize:'2vmax'}}>Your Answer</h1>
