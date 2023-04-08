@@ -79,7 +79,7 @@ export const Home = () => {
                 <Question text={q.text} tags={q.tags} id={q._id} userid={q.author} 
                 answers={q.answers.length} votes={q.votes} views={q.views} createdat={q.created}/>
               </>
-            )):<div style={{display:'flex',width:'100vw',height:'100vh',alignItems:'center',justifyContent:'center'}}>
+            )):<div style={{display:'flex',height:'100vh',alignItems:'center',justifyContent:'center'}}>
             <CircularProgress/>
             </div>}
         </div>
