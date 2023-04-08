@@ -2,6 +2,7 @@ import React from 'react'
 import { GoogleLogin } from 'react-google-login';
 import { makeStyles } from '@material-ui/core/styles';
 import { useNavigate } from 'react-router-dom';
+import { URL } from '../constants/userConstants';
 import axios from 'axios'
 
 const useStyles = makeStyles((theme) => ({
@@ -17,7 +18,7 @@ export default function Logingoogle() {
 
     const onGoogleSuccess = async (response) => {
         const access_token = response.tokenId;
-const {data}=await axios.post('https://stackoverflowclonerajesh.herokuapp.com/auth/googlelogin',{tokenId:access_token})
+const {data}=await axios.post(`${URL}auth/googlelogin`,{tokenId:access_token})
     console.log(data)
     localStorage.setItem("server_token",data.server_token);
     }

@@ -4,6 +4,7 @@ import axios from 'axios'
 import {useSelector} from 'react-redux'
 import {useAlert} from 'react-alert'
 import Taginput from './tag-input'
+import { URL } from './constants/userConstants'
 
 export const Askquestion=()=>{
     const alert=useAlert()
@@ -16,7 +17,7 @@ export const Askquestion=()=>{
 const handlesubmit= async(e)=>{
     e.preventDefault()
     console.log(tags)
-  await  axios.post('https://stackoverflowclonerajesh.herokuapp.com/question/question',
+  await  axios.post(`${URL}/question/question`,
   {title:title,tags:tags,author:user._id,text:text})
   alert.success('posted succesfully')
   setTitle()

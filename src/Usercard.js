@@ -1,11 +1,12 @@
 import { useEffect,useState } from "react"
 import axios from 'axios'
+import { URL } from "./constants/userConstants"
 
 export const Usercard=({id})=>{
     const [user,setUser]=useState()
     console.log(id)
     useEffect(async()=>{
-const data=await axios.get(`https://stackoverflowclonerajesh.herokuapp.com/auth/getoneuser/${id}`)
+const data=await axios.get(`${URL}/auth/getoneuser/${id}`)
 console.log(data)
 setUser(data.data.message)
     },[])

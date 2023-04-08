@@ -5,6 +5,7 @@ import {format} from 'timeago.js'
 import {useEffect,useState} from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import axios from 'axios'
+import { URL } from './constants/userConstants'
 
 export const Answer=({answer,id,ans,questionid})=>{
     console.log(ans)
@@ -37,11 +38,11 @@ console.log(id,questionid)
 if(!(voted==='upvoted')){
 setVotes(votes+1)
 setVoted('upvoted')
-axios.post(`https://stackoverflowclonerajesh.herokuapp.com/question/upvoteanswer/${questionid}`,
+axios.post(`${URL}/${questionid}`,
 {user:user._id,vote:1,answerid:ans._id})
 }
 else{
-    axios.post(`https://stackoverflowclonerajesh.herokuapp.com/question/upvoteanswer/${questionid}`,
+    axios.post(`${URL}/question/upvoteanswer/${questionid}`,
 {user:user._id,vote:-1,answerid:ans._id})
 
     setVotes(votes-1)
@@ -53,11 +54,11 @@ console.log(id,questionid)
 if(!(voted==='downvoted')){
     setVotes(votes-1)
     setVoted('downvoted')
-    axios.post(`https://stackoverflowclonerajesh.herokuapp.com/question/upvoteanswer/${questionid}`,
+    axios.post(`${URL}/question/upvoteanswer/${questionid}`,
 {user:user._id,vote:-1,answerid:ans._id})
     }
     else{
-        axios.post(`https://stackoverflowclonerajesh.herokuapp.com/question/upvoteanswer/${questionid}`,
+        axios.post(`${URL}/question/upvoteanswer/${questionid}`,
         {user:user._id,vote:1,answerid:ans._id})
         setVotes(votes+1)
         setVoted()

@@ -51,24 +51,23 @@ export const DELETE_USER_RESET = "DELETE_USER_RESET";
 
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
-
 function geturl() {
-    var current = process.env.REACT_APP_API;
-    if (current == "local") {
-      return "http://localhost:8000";
-    } else {
-      return "";
-    }
+  var current = process.env.REACT_APP_API;
+  if (current == "local") {
+    return "http://localhost:8000";
+  } else {
+    return "https://dreamelevenclonebackend-production.up.railway.app";
   }
-  
-  function getfrontendurl() {
-    var current = process.env.REACT_APP_API;
-    if (current == "local") {
-      return "http://localhost:3000";
-    } else {
-      return "https://web-production-b36d.up.railway.app/";
-    }
+}
+
+function getfrontendurl() {
+  var current = process.env.REACT_APP_API;
+  if (current == "local") {
+    return "http://localhost:3000";
+  } else {
+    return "https://dream-11-clone-mern-stack.vercel.app";
   }
-  
-  export const URL = geturl();
-  export const FURL = getfrontendurl();
+}
+
+export const URL = geturl();
+export const FURL = getfrontendurl();

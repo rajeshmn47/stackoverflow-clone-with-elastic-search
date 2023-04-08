@@ -9,6 +9,7 @@ import {
   LOAD_USER_SUCCESS,
   LOAD_USER_REQUEST,
   LOAD_USER_FAIL,
+  URL
 } from '../constants/userConstants'
 
 const headers = {
@@ -19,7 +20,7 @@ export const register = (myform) => async (dispatch) => {
     console.log(myform)
     dispatch({ type: REGISTER_USER_REQUEST })
     const { data } = await axios.post(
-      'https://stackoverflowclonerajesh.herokuapp.com/auth/register',
+      `${URL}/auth/register`,
       { myform }
     )
     console.log(data)
@@ -36,7 +37,7 @@ export const login = (myform) => async (dispatch) => {
     console.log(myform)
     dispatch({ type: LOGIN_REQUEST })
     const { data } = await axios.post(
-      'https://stackoverflowclonerajesh.herokuapp.com/auth/login',
+      `${URL}/auth/login`,
       { myform }
     )
     console.log(data)
@@ -56,7 +57,7 @@ export const loadUser = () => async (dispatch) => {
       localStorage.getItem('server_token')
     dispatch({ type: LOAD_USER_REQUEST })
     const { data } = await axios(
-      'https://stackoverflowclonerajesh.herokuapp.com/auth/loaduser',
+      `${URL}/auth/loaduser`,
       {
         method: 'get',
         headers: {

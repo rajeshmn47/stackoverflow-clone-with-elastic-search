@@ -22,6 +22,7 @@ import bottomicon from './images/bottomdown.jpeg'
 import upicon from './images/upperup.jpeg'
 import Drawer from '@material-ui/core/Drawer';
 import MenuIcon from '@material-ui/icons/Menu';
+import { URL } from './constants/userConstants'
 
 
 
@@ -46,7 +47,7 @@ const[voted,setVoted]=useState()
   useEffect(async () => {
     console.log(id)
     const { data } = await axios.get(
-      `https://stackoverflowclonerajesh.herokuapp.com/question/getonequestion/${id.id}`
+      `${URL}/question/getonequestion/${id.id}`
     )
     console.log(data?.question?.answers[0]?.text)
     setQuestion(data.question)
@@ -56,11 +57,11 @@ const[voted,setVoted]=useState()
     try{
     if(user){
     console.log(user._id,'postanswer')
-    await axios.post('https://stackoverflowclonerajesh.herokuapp.com/question/postanswer',
+    await axios.post(`${URL}/question/postanswer`,
     {questionid:id.id,authorid:user._id,text:text})
     alert.success('posted succesfully')
     const { data } = await axios.get(
-      `https://stackoverflowclonerajesh.herokuapp.com/question/getonequestion/${id.id}`
+      `${URL}/question/getonequestion/${id.id}`
     )
     console.log(data?.question?.answers[0]?.text)
     setQuestion(data.question)

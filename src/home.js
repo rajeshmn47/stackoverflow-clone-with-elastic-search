@@ -11,13 +11,14 @@ import {
   makeStyles,
   ThemeProvider,
 } from "@material-ui/core";
+import { URL } from './constants/userConstants'
 
 export const Home = () => {
   const navigate=useNavigate()
   const [questions, setQuestions] = useState([])
   useEffect(async () => {
     const { data } = await axios.get(
-      'https://stackoverflowclonerajesh.herokuapp.com/question/getquestions'
+      `${URL}/question/getquestions`
     )
     console.log(data)
     setQuestions(data.questions)

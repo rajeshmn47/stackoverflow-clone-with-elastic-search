@@ -9,6 +9,7 @@ import {
   LOAD_USER_SUCCESS,
   LOAD_USER_REQUEST,
   LOAD_USER_FAIL,
+  URL
 } from '../constants/userConstants'
 
 const headers = {
@@ -19,7 +20,7 @@ export const postanswer = (myform) => async (dispatch) => {
     console.log(myform)
     dispatch({ type: QUESTION_ANSWER_REQUEST })
     const { data } = await axios.post(
-      'https://stackoverflowclonerajesh.herokuapp.com/question/postanswer',
+      '/question/postanswer',
       { myform }
     )
     console.log(data)
