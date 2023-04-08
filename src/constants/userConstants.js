@@ -57,7 +57,7 @@ function geturl() {
     if (current == "local") {
       return "http://localhost:8000";
     } else {
-      return "";
+      return "https://web-production-b36d.up.railway.app";
     }
   }
   
@@ -66,7 +66,7 @@ function geturl() {
     if (current == "local") {
       return "http://localhost:3000";
     } else {
-      return "https://web-production-b36d.up.railway.app/";
+      return "https://web-production-b36d.up.railway.app";
     }
   }
   
