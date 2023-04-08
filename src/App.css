@@ -1,29 +1,29 @@
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
 }
-.navbar{
-  background-color: #F8F9F9;
+.navbar {
+  background-color: #f8f9f9;
   height: 4vmax;
-  display:flex;
+  display: flex;
   align-items: center;
-  position:fixed;
+  position: fixed;
   top: 0;
   width: 100vw;
   z-index: 1000000;
 }
-.auth{
-margin-left:1vmax;
-width:20vw;
-display:'flex';
-align-items:center;
-justify-content:space-evenly;
+.auth {
+  margin-left: 1vmax;
+  width: 20vw;
+  display: "flex";
+  align-items: center;
+  justify-content: space-evenly;
 }
-.navbarinput{
+.navbarinput {
   outline: none;
   border: none;
 }
-.navbarinputcontainer{
+.navbarinputcontainer {
   background-color: white;
   width: 50vw;
   height: 5vh;
@@ -32,32 +32,31 @@ justify-content:space-evenly;
   border: 1px solid rgb(148, 147, 147);
   border-radius: 2px;
 }
-.home{
+.home {
   margin-top: 8.5vh;
   margin-left: 20.6vw;
-  display:flex; 
-  justify-content:space-between;
-
+  display: flex;
+  justify-content: space-between;
 }
-.homeone{
-  height:91.5vh ;
+.homeone {
+  height: 91.5vh;
   position: fixed;
   top: 8.5vh;
   left: 0;
   width: 20.7vw;
   border-right: 1px solid rgb(220, 220, 220);
 }
-.box{
+.box {
   height: 5vh;
   width: 30vw;
   border: 1px solid rgb(220, 220, 220);
   display: flex;
   margin-left: 16vw;
 }
-.homemiddle{
+.homemiddle {
   width: 66%;
 }
-.smallbox{
+.smallbox {
   border-right: 1px solid rgb(220, 220, 220);
   height: 100%;
   min-width: 5vw;
@@ -68,7 +67,7 @@ justify-content:space-evenly;
   align-items: center;
   justify-content: center;
 }
-.last{
+.last {
   height: 100%;
   min-width: 5vw;
   padding: 5px;
@@ -77,35 +76,35 @@ justify-content:space-evenly;
   justify-content: center;
   align-items: center;
 }
-.selected{
-  background-color: #E3E6E8;
+.selected {
+  background-color: #e3e6e8;
 }
-.bount{
+.bount {
   background-color: blue;
   color: white;
   margin: 5px 5px;
-  padding:2px 6px;
+  padding: 2px 6px;
   font-size: 1vmax;
 }
-.askque{
+.askque {
   outline: none;
   border: none;
-  background-color:#0A95FF;
+  background-color: #0a95ff;
   color: white;
   padding: 5px;
   font-size: small;
   margin-right: 1vmax;
 }
-.askquestion{
+.askquestion {
   outline: none;
   border: none;
-  background-color:#0A95FF;
+  background-color: #0a95ff;
   color: white;
   padding: 5px;
   font-size: small;
   margin-right: 1vmax;
 }
-.topcontainer{
+.topcontainer {
   border-bottom: 1px solid rgb(220, 220, 220);
   width: 100%;
   padding: 1vmax;
@@ -114,17 +113,17 @@ justify-content:space-evenly;
   align-items: center;
   flex-direction: column;
 }
-.topcontainerbottom{
+.topcontainerbottom {
   width: 100%;
   padding: 2vmax;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.topcontainer h1{
+.topcontainer h1 {
   font-size: 2vmax;
 }
-.question{
+.question {
   padding: 1vmax 2vmax;
   border-bottom: 1px solid rgb(220, 220, 220);
   width: 100%;
@@ -133,127 +132,125 @@ justify-content:space-evenly;
   flex-direction: row;
   justify-content: center;
   height: 17vh;
- 
 }
-.questio{
-display: flex;
- width:15vw;
- align-items: flex-end;
-flex-direction: column;
-height: 12vh;
-justify-content: space-evenly;
+.questio {
+  display: flex;
+  width: 15vw;
+  align-items: flex-end;
+  flex-direction: column;
+  height: 12vh;
+  justify-content: space-evenly;
 }
-.tag{
-  background-color: #E1ECF4;
+.tag {
+  background-color: #e1ecf4;
   padding: 1px 3px;
   margin-right: 1vmax;
-  height:25px;
-  
-  color:hsl(205,47%,42%);
+  height: 25px;
+
+  color: hsl(205, 47%, 42%);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0vmax 1vmax;
 }
-.overflowblog{
+.overflowblog {
   height: 60vh;
 }
-.homebtn{
-  background-color: #E3E6E8;
+.homebtn {
+  background-color: #e3e6e8;
   margin-top: 1vmax;
   width: 100%;
   padding-left: 1vmax;
   height: 2vmax;
   border-right: 2px solid orange;
 }
-.footer{
+.footer {
   background-color: #232629;
   display: flex;
   justify-content: space-evenly;
   padding: 2vmax;
   height: 40vh;
   z-index: 1000000000000000000000000000000000000000000000;
-position: absolute;
+  position: absolute;
   width: 100%;
 }
-.foot{
-  color:#9199A1;
- font-size: 12px;
+.foot {
+  color: #9199a1;
+  font-size: 12px;
   height: 35vh;
-
 }
-.lastfoot{
+.lastfoot {
   display: flex;
   flex-direction: column;
-  color: #9199A1;
+  color: #9199a1;
   justify-content: space-between;
   width: 20vw;
 }
-.foot h1{
+.foot h1 {
   font-size: 1.5vmax;
-  color: #D6D9DC;
+  color: #d6d9dc;
   font-weight: bold;
 }
-.auth{
+.auth {
   display: flex;
   justify-content: space-evenly;
 }
-.questi{
-  display:flex;
- flex-direction: column;
- width: 40vw;
- height: 12vh;
- justify-content: space-evenly;
- }
- .menuicon{
-   display: none;
- }
- .lastfootdivone{
-   display: flex;
-   font-size: 12px;
-   justify-content: space-evenly;
- }
- .authresponsive{
-   display: none;
- }
+.questi {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  height: 12vh;
+  justify-content: space-evenly;
+}
+.menuicon {
+  display: none;
+}
+.lastfootdivone {
+  display: flex;
+  font-size: 12px;
+  justify-content: space-evenly;
+}
+.authresponsive {
+  display: none;
+}
 
- @media (max-width: 768px) {
-   .navbar{
-  background-color: #F8F9F9;
-  height: 8vmax;
-  display:flex;
-  align-items: center;
-  top: 0;
-  width: 100%;
-  z-index: 1000000;
-  justify-content: flex-start;
-  padding: 1vmax;
-   }
-   .home{
-  margin-left: 0;
-    flex-direction: column;
-   }
-   .homeone{
-     display: none;
-   }
-   .homemiddle{
-     width: 100%;
-   }
-  .aboutContent h1{
-      text-align: center !important;
+@media (max-width: 768px) {
+  .navbar {
+    background-color: #f8f9f9;
+    height: 8vmax;
+    display: flex;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    z-index: 1000000;
+    justify-content: flex-start;
+    padding: 1vmax;
   }
-  .question{
+  .home {
+    margin-left: 0;
+    flex-direction: column;
+  }
+  .homeone {
+    display: none;
+  }
+  .homemiddle {
+    width: 100%;
+  }
+  .aboutContent h1 {
+    text-align: center !important;
+  }
+  .question {
     display: flex;
     flex-direction: column;
     align-items: center;
-   width: 100%;
-   margin-left: 0;
-   padding: 1vmax;
-   justify-content: center;
-   height: 20vh;
-   box-sizing: border-box;
+    width: 100%;
+    margin-left: 0;
+    padding: 1vmax;
+    justify-content: center;
+    height: 20vh;
+    box-sizing: border-box;
   }
-  .questio{
+  .questio {
     flex-direction: row;
     align-items: flex-start;
     font-size: 2vmax;
@@ -262,82 +259,81 @@ position: absolute;
     margin-top: 0;
     box-sizing: border-box;
   }
-  .questi{
+  .questi {
     align-items: flex-start;
-    font-size:2vmax;
-flex-direction: column;
-width: 100%;
-justify-content: flex-start;
-margin-top: 0;
-box-sizing: border-box;
+    font-size: 2vmax;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 0;
+    box-sizing: border-box;
   }
-  .navbarinput{
+  .navbarinput {
     display: none;
   }
-  .navbarinputcontainer{
+  .navbarinputcontainer {
     display: none;
   }
-  .tag{
-height: 4vh;
- 
+  .tag {
+    height: 4vh;
   }
-  .box{
+  .box {
     width: 90vw;
     margin-left: 1vw;
     font-size: x-small;
   }
- .stackoverflow{
-   display: none;
- }
- .smallbox{
-   width: auto;
- }
-  .username{
+  .stackoverflow {
+    display: none;
+  }
+  .smallbox {
+    width: auto;
+  }
+  .username {
     display: none;
   }
 
-  .logout{
+  .logout {
     display: none;
   }
-  .auth{
+  .auth {
     display: none;
   }
-  .menuicon{
+  .menuicon {
     display: block;
   }
-  .overflowblog{
+  .overflowblog {
     width: 97%;
     height: auto;
     margin-right: 5vmax;
   }
-  .footer{
+  .footer {
     flex-direction: column;
     height: 70vh;
     justify-content: space-evenly;
   }
-  .footft p{
+  .footft p {
     margin-right: 2vmax;
   }
-  .foot{
+  .foot {
     height: auto;
   }
-  .footft{
+  .footft {
     display: flex;
-  flex-wrap: wrap;
+    flex-wrap: wrap;
   }
-  .lastfootdivone{
+  .lastfootdivone {
     width: 100%;
   }
-  .lastfoot{
+  .lastfoot {
     width: 100%;
     justify-content: flex-start;
     align-items: flex-start;
     font-size: 1vmax;
   }
-  .first{
+  .first {
     display: none;
   }
-  .authresponsive{
+  .authresponsive {
     display: flex;
   }
 }

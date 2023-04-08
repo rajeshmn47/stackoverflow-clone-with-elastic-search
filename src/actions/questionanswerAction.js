@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from "axios";
 import {
   REGISTER_USER_SUCCESS,
   REGISTER_USER_REQUEST,
@@ -9,24 +9,24 @@ import {
   LOAD_USER_SUCCESS,
   LOAD_USER_REQUEST,
   LOAD_USER_FAIL,
-  URL
-} from '../constants/userConstants'
+  URL,
+} from "../constants/userConstants";
 
 const headers = {
-  Accept: 'application/json',
-}
+  Accept: "application/json",
+};
 export const postanswer = (myform) => async (dispatch) => {
   try {
-    console.log(myform)
-    dispatch({ type: QUESTION_ANSWER_REQUEST })
-    const { data } = await axios.post(
-      '/question/postanswer',
-      { myform }
-    )
-    console.log(data)
-    dispatch({ type: QUESTION_ANSWER_SUCCESS, payload: data.user })
+    console.log(myform);
+    dispatch({ type: QUESTION_ANSWER_REQUEST });
+    const { data } = await axios.post("/question/postanswer", { myform });
+    console.log(data);
+    dispatch({ type: QUESTION_ANSWER_SUCCESS, payload: data.user });
   } catch (error) {
-    console.log(error.response, 'asdfgh')
-    dispatch({ type: QUESTION_ANSWER_FAIL, payload: error.response.data.message })
+    console.log(error.response, "asdfgh");
+    dispatch({
+      type: QUESTION_ANSWER_FAIL,
+      payload: error.response.data.message,
+    });
   }
-}
+};

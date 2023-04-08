@@ -1,7 +1,9 @@
 const ErrorHandler = require("./errorhandler");
 
 module.exports = (err, req, res, next) => {
-    console.log('ytredeudjffffffffffffffffffffffffffffffffffffffffffffffffffffffffjfffffffffffjjjjjjch')
+  console.log(
+    "ytredeudjffffffffffffffffffffffffffffffffffffffffffffffffffffffffjfffffffffffjjjjjjch"
+  );
   err.statusCode = err.statusCode || 500;
   err.message = err.message || "Internal Server Error";
 
@@ -13,7 +15,7 @@ module.exports = (err, req, res, next) => {
 
   // Mongoose duplicate key error
   if (err.code === 11000) {
-      console.log('baagunaara')
+    console.log("baagunaara");
     const message = `Duplicate ${Object.keys(err.keyValue)} Entered`;
     err = new ErrorHandler(message, 400);
   }

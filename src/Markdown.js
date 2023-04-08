@@ -1,5 +1,5 @@
-import React, {useState, forwardRef, useImperativeHandle} from 'react';
-import RichTextEditor from 'react-rte';
+import React, { useState, forwardRef, useImperativeHandle } from "react";
+import RichTextEditor from "react-rte";
 
 const MarkdownEditor = forwardRef((props, ref) => {
   const [value, setValue] = useState(RichTextEditor.createEmptyValue());
@@ -16,7 +16,7 @@ const MarkdownEditor = forwardRef((props, ref) => {
       // Send the changes up to the parent component as an HTML string.
       // This is here to demonstrate using `.toString()` but in a real app it
       // would be better to avoid generating a string on each change.
-      props.onChange(newValue.toString('html'));
+      props.onChange(newValue.toString("html"));
     }
   };
 
@@ -26,16 +26,16 @@ const MarkdownEditor = forwardRef((props, ref) => {
   const toolbarConfig = {
     // Optionally specify the groups to display (displayed in the order listed).
     display: [
-      'INLINE_STYLE_BUTTONS',
-      'BLOCK_TYPE_BUTTONS',
-      'LINK_BUTTONS',
+      "INLINE_STYLE_BUTTONS",
+      "BLOCK_TYPE_BUTTONS",
+      "LINK_BUTTONS",
       // 'BLOCK_TYPE_DROPDOWN',
       // 'HISTORY_BUTTONS',
     ],
     INLINE_STYLE_BUTTONS: [
-      {label: 'Bold', style: 'BOLD', className: 'button-format'},
-      {label: 'Italic', style: 'ITALIC', className: 'button-format'},
-      {label: 'Underline', style: 'UNDERLINE', className: 'button-format'},
+      { label: "Bold", style: "BOLD", className: "button-format" },
+      { label: "Italic", style: "ITALIC", className: "button-format" },
+      { label: "Underline", style: "UNDERLINE", className: "button-format" },
       // {label: 'Monospace', style: 'CODE', className: 'button-format'},
     ],
     // BLOCK_TYPE_DROPDOWN: [
@@ -45,21 +45,21 @@ const MarkdownEditor = forwardRef((props, ref) => {
     //   {label: 'Heading Small', style: 'header-three'},
     // ],
     BLOCK_TYPE_BUTTONS: [
-      {label: 'UL', style: 'unordered-list-item', className: 'button-format'},
-      {label: 'OL', style: 'ordered-list-item', className: 'button-format'},
-      {label: 'Blockquote', style: 'blockquote', className: 'button-format'},
+      { label: "UL", style: "unordered-list-item", className: "button-format" },
+      { label: "OL", style: "ordered-list-item", className: "button-format" },
+      { label: "Blockquote", style: "blockquote", className: "button-format" },
       {
-        label: 'Code Block',
-        style: 'code-block',
-        className: 'button-format code-block',
+        label: "Code Block",
+        style: "code-block",
+        className: "button-format code-block",
       },
     ],
   };
   return (
     <RichTextEditor
-      className='rich-text-editor-root'
-      toolbarClassName='rich-text-editor-toolbar'
-      editorClassName='rich-text-editor-editor'
+      className="rich-text-editor-root"
+      toolbarClassName="rich-text-editor-toolbar"
+      editorClassName="rich-text-editor-editor"
       toolbarConfig={toolbarConfig}
       value={value}
       onChange={onChange}
@@ -67,4 +67,4 @@ const MarkdownEditor = forwardRef((props, ref) => {
   );
 });
 
-export default MarkdownEditor
+export default MarkdownEditor;
