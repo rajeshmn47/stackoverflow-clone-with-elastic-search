@@ -28,8 +28,8 @@ export const Question = ({
           </h5>
         </div>
         <div className="questi">
-          <div style={{ color: "blue" }}>{text}</div>
-          <div style={{ color: "blue", display: "flex" }} className="tags">
+          <div style={{ color: "#0e7bce" }}>{text}</div>
+          <div style={{ color: "#0e7bce", display: "flex" }} className="tags">
             {tags.map((t) => (
               <>
                 <div className="tag">{t.text}</div>

@@ -83,7 +83,7 @@
   background-color: #e3e6e8;
 }
 .bount {
-  background-color: blue;
+  background-color: #0074cc;
   color: white;
   margin: 5px 5px;
   padding: 2px 6px;
@@ -157,7 +157,7 @@
   padding: 0vmax 1vmax;
 }
 .overflowblog {
-  height: 420px;
+  height: 440px;
   width: 26%;
   margin: 0 3%;
   margin-top: 20px;
