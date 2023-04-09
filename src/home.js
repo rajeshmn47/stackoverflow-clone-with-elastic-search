@@ -59,7 +59,7 @@ export const Home = () => {
                   Ask Question
                 </button>
               </div>
-              <div>
+              <div style={{ float: "right" }}>
                 <div className="box">
                   <div className="smallbox selected">Interesting</div>
                   <div className="smallbox">

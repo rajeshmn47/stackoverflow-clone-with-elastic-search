@@ -104,16 +104,16 @@ export const Navbar = () => {
           Stack<span className="font-bold">Overflow</span>
         </h5>
 
-        <p className="opacity-50 m-1">Products</p>
+        <p className="opacity-50 m-1" style={{fontSize:'12px',margin:'0 10px'}}>Products</p>
         <div className="navbarinputcontainer">
-          <SearchIcon style={{ opacity: "0.5" }} />
+          <SearchIcon style={{ opacity: "0.5",margin:'0 5px' }} />
           <input className="navbarinput" placeholder="search..." />
         </div>
         {user?.username ? (
           <>
             <div className="authresponsive">
               <div style={{ display: "flex", alignItems: "center" }}>
-                <SearchIcon style={{ opacity: "0.5" }} />
+                <SearchIcon />
                 <img
                   src={user.profilePhoto}
                   alt=""
@@ -156,9 +156,26 @@ export const Navbar = () => {
             <div className="auth">
               <h5 className="username">{user.username}</h5>
               <img src={user.profilePhoto} alt="" width="20" />
-              <button className="loginbtn logout" onClick={() => logout()}>
-                Logout
-              </button>
+              <img
+                src="./inbox.svg"
+                alt=""
+                style={{ width: "20px", margin: "0 10px" }}
+              />
+              <img
+                src="./prize.svg"
+                alt=""
+                style={{ width: "20px", margin: "0 10px" }}
+              />
+              <img
+                src="./help.svg"
+                alt=""
+                style={{ width: "20px", margin: "0 10px" }}
+              />
+              <img
+                src="./exchange.svg"
+                alt=""
+                style={{ width: "20px", margin: "0 10px" }}
+              />
             </div>
           </>
         ) : (

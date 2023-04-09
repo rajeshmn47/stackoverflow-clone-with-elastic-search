@@ -20,9 +20,12 @@ export const Question = ({
       <div className="question" onClick={() => navigate(`/answers/${id}`)}>
         <div className="questio">
           <h5 style={{ marginRight: "2vw" }}>{votes} votes</h5>
-          <h5 style={{ marginRight: "2vw" }}>{answers} answers</h5>
-
-          <h5 style={{ marginRight: "2vw" }}>{views} views</h5>
+          <h5 style={{ marginRight: "2vw", color: "#6c757e" }}>
+            {answers} answers
+          </h5>
+          <h5 style={{ marginRight: "2vw", color: "#6c757e" }}>
+            {views} views
+          </h5>
         </div>
         <div className="questi">
           <div style={{ color: "blue" }}>{text}</div>
