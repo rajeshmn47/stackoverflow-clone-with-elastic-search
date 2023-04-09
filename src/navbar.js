@@ -104,9 +104,14 @@ export const Navbar = () => {
           Stack<span className="font-bold">Overflow</span>
         </h5>
 
-        <p className="opacity-50 m-1" style={{fontSize:'12px',margin:'0 10px'}}>Products</p>
+        <p
+          className="opacity-50 m-1"
+          style={{ fontSize: "12px", margin: "0 10px" }}
+        >
+          Products
+        </p>
         <div className="navbarinputcontainer">
-          <SearchIcon style={{ opacity: "0.5",margin:'0 5px' }} />
+          <SearchIcon style={{ opacity: "0.5", margin: "0 5px" }} />
           <input className="navbarinput" placeholder="search..." />
         </div>
         {user?.username ? (

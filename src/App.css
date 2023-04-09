@@ -157,10 +157,12 @@
   padding: 0vmax 1vmax;
 }
 .overflowblog {
-  height: 60vh;
+  height: 420px;
   width: 26%;
   margin: 0 3%;
   margin-top: 20px;
+  border: 1px solid #f1e5bc;
+  background-color: #fffaf0;
 }
 .homebtn {
   background-color: #e3e6e8;
