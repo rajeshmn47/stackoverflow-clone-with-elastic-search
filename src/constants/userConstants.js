@@ -56,7 +56,7 @@ function geturl() {
   if (current == "local") {
     return "http://localhost:8000";
   } else {
-    return "https://web-production-b36d.up.railway.app";
+    return "https://stackoverflow-64xj.onrender.com";
   }
 }
 
