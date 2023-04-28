@@ -100,7 +100,7 @@ export const Answer = ({ answer, id, ans, questionid }) => {
               onClick={() => decreasevotes(id, questionid)}
             />
           </div>
-          <div style={{width: '100%'}}>
+          <div style={{ width: "100%" }}>
             <ReactMarkdown children={answer} rehypePlugins={[rehypeRaw]} />
             {user._id === ans.author.toString() ? (
               <>
@@ -108,20 +108,23 @@ export const Answer = ({ answer, id, ans, questionid }) => {
                 <button>delete</button>
               </>
             ) : null}
-               <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            opacity: "0.7",
-            marginTop: "1.5vmax",
-          }}
-        >
-          <p style={{ opacity: "0.7",textTransform:'capitalize' }}> share  edit  follow</p>
-          <div>
-            <Usercard id={id} />
-            {format(ans.created)}
-          </div>
-        </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                opacity: "0.7",
+                marginTop: "1.5vmax",
+              }}
+            >
+              <p style={{ opacity: "0.7", textTransform: "capitalize" }}>
+                {" "}
+                share edit follow
+              </p>
+              <div>
+                <Usercard id={id} />
+                {format(ans.created)}
+              </div>
+            </div>
           </div>
         </div>
         <div style={{ margin: "1vmax 1vmax" }}>
