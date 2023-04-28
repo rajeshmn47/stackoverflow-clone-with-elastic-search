@@ -137,4 +137,40 @@
   .submitbutton {
     width: 100%;
   }
+  .joint {
+    font-size: 2vmax;
+    margin: 1vmax 0vmax;
+  }
+  .signupform {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    background-color: white;
+    padding: 2vmax;
+    height: 240px;
+    box-sizing: border-box;
+  }
+  .loginform {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    background-color: white;
+    padding: 2vmax;
+    height: 170px;
+    box-sizing: border-box;
+  }
+  .inputs {
+    border: 1px solid rgb(150, 148, 148);
+    height: 25px;
+    padding-left: 5px;
+    box-sizing: border-box;
+  }
+  .loginbtn {
+    height: 28px;
+  }
+  .signupbtn {
+    height: 28px;
+  }
 }

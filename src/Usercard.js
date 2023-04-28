@@ -20,7 +20,7 @@ export const Usercard = ({ id }) => {
         }}
       >
         <img
-          style={{ marginLeft: "1vmax" }}
+          style={{ marginLeft: "1vmax", width: "14px", height: "14px" }}
           src={user?.profilePhoto}
           alt=""
           width="20"

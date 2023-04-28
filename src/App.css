@@ -221,6 +221,9 @@
 .authresponsive {
   display: none;
 }
+.askquestion {
+  margin-top: 20px;
+}
 
 @media (max-width: 768px) {
   .navbar {
@@ -255,25 +258,27 @@
     margin-left: 0;
     padding: 1vmax;
     justify-content: center;
-    height: 20vh;
+    height: 120px;
     box-sizing: border-box;
   }
   .questio {
     flex-direction: row;
-    align-items: flex-start;
-    font-size: 2vmax;
+    align-items: center;
+    font-size: 12px;
     width: 100%;
     justify-content: flex-start;
     margin-top: 0;
     box-sizing: border-box;
+    height: 25px !important;
   }
   .questi {
     align-items: flex-start;
-    font-size: 2vmax;
+    font-size: 14px;
     flex-direction: column;
     width: 100%;
     justify-content: flex-start;
     margin-top: 0;
+    height: 60px;
     box-sizing: border-box;
   }
   .navbarinput {
@@ -286,9 +291,9 @@
     height: 4vh;
   }
   .box {
-    width: 90vw;
+    width: auto;
     margin-left: 1vw;
-    font-size: x-small;
+    font-size: 14px;
   }
   .stackoverflow {
     display: none;
@@ -313,6 +318,11 @@
     width: 97%;
     height: auto;
     margin-right: 5vmax;
+    margin: 10px auto;
+    width: 95%;
+  }
+  .topcontainerbottom {
+    font-size: 14px;
   }
   .footer {
     flex-direction: column;
@@ -343,5 +353,8 @@
   }
   .authresponsive {
     display: flex;
+  }
+  .askquestion {
+    margin-top: 10px;
   }
 }

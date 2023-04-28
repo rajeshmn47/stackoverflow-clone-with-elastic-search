@@ -78,7 +78,7 @@ export const Answer = ({ answer, id, ans, questionid }) => {
   return (
     <>
       <div className="answer">
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div style={{ display: "flex", alignItems: "flex-start" }}>
           <div
             style={{
               display: "flex",
@@ -100,7 +100,7 @@ export const Answer = ({ answer, id, ans, questionid }) => {
               onClick={() => decreasevotes(id, questionid)}
             />
           </div>
-          <div>
+          <div style={{width: '100%'}}>
             <ReactMarkdown children={answer} rehypePlugins={[rehypeRaw]} />
             {user._id === ans.author.toString() ? (
               <>
@@ -108,9 +108,7 @@ export const Answer = ({ answer, id, ans, questionid }) => {
                 <button>delete</button>
               </>
             ) : null}
-          </div>
-        </div>
-        <div
+               <div
           style={{
             display: "flex",
             justifyContent: "space-between",
@@ -118,10 +116,12 @@ export const Answer = ({ answer, id, ans, questionid }) => {
             marginTop: "1.5vmax",
           }}
         >
-          <p style={{ opacity: "0.7" }}> share edit follow</p>
+          <p style={{ opacity: "0.7",textTransform:'capitalize' }}> share  edit  follow</p>
           <div>
             <Usercard id={id} />
             {format(ans.created)}
+          </div>
+        </div>
           </div>
         </div>
         <div style={{ margin: "1vmax 1vmax" }}>

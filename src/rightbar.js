@@ -5,7 +5,7 @@ export const Rightbar = () => {
     <>
       <div
         className="border-2 border-orange-200 shadow-xl m-1 overflowblog"
-        style={{ width: "450px" }}
+      
       >
         <div className="bg-orange-200 p-2 text-sm font-bold">
           <h2 className="opacity-50">The Overflow Blog</h2>

@@ -29,20 +29,27 @@ export const Question = ({
         </div>
         <div className="questi">
           <div style={{ color: "#0e7bce" }}>{text}</div>
-          <div style={{ color: "#0e7bce", display: "flex" }} className="tags">
+          <div
+            style={{ color: "#0e7bce", display: "flex", width: "100%" }}
+            className="tags"
+          >
             {tags.map((t) => (
               <>
                 <div className="tag">{t.text}</div>
               </>
             ))}
 
-            <div>
+            <div
+              style={{
+                marginLeft: "auto",
+              }}
+            >
               {" "}
               <span
                 style={{
                   color: "blue",
-                  fontSize: "1vmax",
-                  marginLeft: "5vmax",
+                  fontSize: "12px",
+                  marginLeft: "auto",
                 }}
               >
                 {}
@@ -50,7 +57,7 @@ export const Question = ({
               <span
                 style={{
                   color: "black",
-                  fontSize: "1vmax",
+                  fontSize: "12px",
                   marginLeft: "1vmax",
                 }}
               >
