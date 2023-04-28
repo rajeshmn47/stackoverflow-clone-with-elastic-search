@@ -142,7 +142,7 @@ export const Answerscontainer = ({ props, ref }) => {
             <>
               <div className="answercontainer">
                 <h1 style={{ fontSize: "3vmax" }}>{question?.title}</h1>
-                <p style={{ fontSize: "1vmax" }}>
+                <p style={{ fontSize: "12px" }}>
                   Asked{" "}
                   <span style={{ opacity: "0.5", marginRight: "3vw" }}>
                     {format(question?.created)}
