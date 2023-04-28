@@ -31,13 +31,13 @@ export const Askquestion = () => {
   return (
     <>
       <div className="askquestioncontainer">
-        <h1 style={{ fontSize: "2vmax", padding: "2vmax 10vmax" }}>
+        <h1 style={{ fontSize: "18px" }} className="title">
           Ask a Public Question
         </h1>
         <div className="askquestions">
           <div className="questionform">
             <h2>Title</h2>
-            <p style={{ fontSize: "12px" }}>
+            <p style={{ fontSize: "14px" }}>
               Be specific and imagine you’re asking a question to another person
             </p>
             <input
@@ -47,7 +47,7 @@ export const Askquestion = () => {
               onChange={(e) => setTitle(e.target.value)}
             />
             <h2>Body</h2>
-            <p style={{ fontSize: "12px" }}>
+            <p style={{ fontSize: "14px" }}>
               Include all the information someone would need to answer your
               question
             </p>
@@ -57,7 +57,7 @@ export const Askquestion = () => {
               onChange={(e) => setText(e.target.value)}
             />
             <h2>Tags</h2>
-            <p style={{ fontSize: "12px" }}>
+            <p style={{ fontSize: "14px" }}>
               Add up to 5 tags to describe what your question is about
             </p>
             <Taginput tags={tags} setTags={setTags} />

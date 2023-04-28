@@ -3,8 +3,12 @@
   margin-top: 4vmax;
   padding: 1vmax;
 }
+.title {
+  padding: 1vmax 10vmax;
+}
 .askquestion {
   display: flex;
+  font-size: 14px;
 }
 .askquestionresponsive {
   display: none;
@@ -18,19 +22,22 @@
   background-color: white;
   padding: 1vmax;
 }
+.questionform h2 {
+  font-size: 18px;
+}
 .inputtitle {
-  border: 1px solid rgb(130, 130, 130);
+  border: 1px solid rgb(210, 210, 210);
   width: 50vmax;
   padding: 0.5vmax 1vmax;
 }
 .inputbody {
   height: 20vmax;
   width: 50vmax;
-  border: 1px solid rgb(130, 130, 130);
+  border: 1px solid rgb(210, 210, 210);
   padding: 0.5vmax 1vmax;
 }
 .inputtag {
-  border: 1px solid rgb(130, 130, 130);
+  border: 1px solid rgb(210, 210, 210);
   width: 50vmax;
   padding: 0.5vmax 1vmax;
   outline: none;
@@ -47,7 +54,7 @@
   width: 20vw;
 }
 .procedures {
-  font-size: 12px;
+  font-size: 14px;
 }
 .cautions {
   border-bottom: 1px solid rgb(219, 219, 219);
@@ -62,7 +69,7 @@
   box-shadow: #e3e6e8;
 }
 .ReactTags__tagInputField {
-  border: 1px solid #000;
+  border: 1px solid rgb(210, 210, 210);
   width: 100%;
   margin-top: 2px !important;
 }
@@ -73,6 +80,11 @@
   padding: 2px 2px;
 }
 @media (max-width: 768px) {
+  .title {
+    width: 90vw;
+    margin: 10px auto;
+    padding: 0 0;
+  }
   .askquestioncontainer {
     box-sizing: border-box;
   }
@@ -104,7 +116,7 @@
     width: 100%;
   }
   .askquestioncontainer {
-    font-size: 13px;
+    font-size: 14px;
     margin-top: 6vmax;
   }
   .questionform {
