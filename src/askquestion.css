@@ -47,7 +47,7 @@
   width: 20vw;
 }
 .procedures {
-  font-size: 1vmax;
+  font-size: 12px;
 }
 .cautions {
   border-bottom: 1px solid rgb(219, 219, 219);
@@ -61,6 +61,17 @@
   padding: 0.5vmax 1vmax;
   box-shadow: #e3e6e8;
 }
+.ReactTags__tagInputField {
+  border: 1px solid #000;
+  width: 100%;
+  margin-top: 2px !important;
+}
+.tag-wrapper {
+  margin-right: 5px;
+  background-color: #e1ecf4;
+  color: #39739d;
+  padding: 2px 2px;
+}
 @media (max-width: 768px) {
   .askquestioncontainer {
     box-sizing: border-box;
@@ -70,6 +81,7 @@
     width: 90vw;
     box-sizing: border-box;
     padding: 0vmax;
+    margin: 10px auto;
   }
   .procedure {
     width: 100%;
@@ -92,7 +104,7 @@
     width: 100%;
   }
   .askquestioncontainer {
-    font-size: 2vmax;
+    font-size: 13px;
     margin-top: 6vmax;
   }
   .questionform {

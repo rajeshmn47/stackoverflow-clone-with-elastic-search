@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 96.5vw;
   height: 100vh;
   background-color: #f1f2f3;
   box-sizing: border-box;
@@ -110,6 +109,7 @@
     height: auto;
     flex-direction: column-reverse;
     padding: 0;
+    width: 100vw;
   }
   .signupform {
     width: 70vw;
@@ -129,6 +129,13 @@
     flex-direction: column;
     align-items: center;
     height: auto;
+    box-sizing: border-box;
+    margin-right: 0;
+    width: 250px;
+  }
+  .joinonelast {
+    text-align: center;
+    width: 250px;
   }
   .loginform {
     width: 100%;

@@ -33,7 +33,7 @@ const FormInput = ({ tags, setTags }) => {
   };
 
   return (
-    <div className="app">
+    <div className="app addtags">
       <div>
         <ReactTags
           inputFieldPosition="inline"
