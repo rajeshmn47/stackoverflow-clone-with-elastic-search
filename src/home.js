@@ -12,6 +12,7 @@ import {
   ThemeProvider,
 } from "@material-ui/core";
 import { URL } from "./constants/userConstants";
+import Loader from "./loader";
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -91,16 +92,7 @@ export const Home = () => {
               </>
             ))
           ) : (
-            <div
-              style={{
-                display: "flex",
-                height: "100vh",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <CircularProgress />
-            </div>
+            <Loader />
           )}
         </div>
         <div className="w-1/4 shadow-xl m-1 overflowblog">
