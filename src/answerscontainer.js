@@ -30,6 +30,7 @@ import upicon from "./images/upperup.jpeg";
 import Drawer from "@material-ui/core/Drawer";
 import MenuIcon from "@material-ui/icons/Menu";
 import { URL } from "./constants/userConstants";
+import Loader from "./loader";
 
 export const Answerscontainer = ({ props, ref }) => {
   const { user, isAuthenticated, loading, error } = useSelector(
@@ -234,17 +235,7 @@ export const Answerscontainer = ({ props, ref }) => {
               </div>
             </>
           ) : (
-            <div
-              style={{
-                display: "flex",
-                height: "100vh",
-                alignItems: "center",
-                justifyContent: "center",
-                boxSizing: "border-box",
-              }}
-            >
-              <CircularProgress />
-            </div>
+          <Loader/>
           )}
           <div>
             <h1 style={{ fontSize: "2vmax" }}>Your Answer</h1>
