@@ -235,7 +235,7 @@ export const Answerscontainer = ({ props, ref }) => {
               </div>
             </>
           ) : (
-          <Loader/>
+            <Loader />
           )}
           <div>
             <h1 style={{ fontSize: "2vmax" }}>Your Answer</h1>
