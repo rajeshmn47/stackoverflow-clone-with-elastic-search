@@ -122,9 +122,6 @@
   .questionform {
     width: 100%;
   }
-  .askquestion {
-    display: none;
-  }
   .askquestionresponsive {
     display: block;
     outline: none;

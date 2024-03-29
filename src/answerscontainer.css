@@ -1,6 +1,6 @@
 .containeranswers {
   padding: 2vmax;
-  width: 100%;
+  width: 68%;
 }
 
 .answercontainer {
@@ -9,13 +9,16 @@
   height: auto;
   padding-bottom: 20px;
 }
+
 .answers {
   margin-top: 2vmax;
 }
+
 .tagscontainer {
   display: flex;
   margin: 1vmax 0vmax;
 }
+
 .answerbodycontainer {
   border: 1px solid rgb(220, 220, 220);
   width: 100%;
@@ -24,6 +27,7 @@
   margin: 1vmax 0vmax;
   outline: none;
 }
+
 .answerbody {
   border: none;
   width: 100%;
@@ -33,19 +37,23 @@
   outline: none;
 }
 
-.answerform > input {
+.answerform>input {
   height: 30vh;
 }
+
 .rich-text-editor-editor {
   height: 200px;
 }
+
 .answer {
   margin-top: 2vmax;
   border-bottom: 1px solid rgb(220, 220, 220);
 }
+
 .voted {
   background-color: tomato;
 }
+
 .votedarrow-down {
   width: 0;
   height: 0;
@@ -53,6 +61,7 @@
   border-right: 15px solid transparent;
   border-top: 15px solid #f00;
 }
+
 .arrow-down {
   width: 0;
   height: 0;
@@ -60,6 +69,7 @@
   border-right: 15px solid transparent;
   border-top: 15px solid rgb(161, 161, 161);
 }
+
 .votedarrow-up {
   border-width: 0px 15px 15px 15px;
   width: 0;
@@ -77,9 +87,15 @@
   border-right: 15px solid transparent;
   border-bottom: 15px solid rgb(161, 161, 161);
 }
+
 @media (max-width: 768px) {
   .answercontainer {
     border-bottom: 1px solid rgb(220, 220, 220);
+    width: 100%;
+  }
+
+  .containeranswers {
+    padding: 2vmax;
     width: 100%;
   }
 }
