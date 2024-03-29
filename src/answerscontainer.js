@@ -59,7 +59,7 @@ export const Answerscontainer = ({ props, ref }) => {
     setVotes(
       question?.votes.length > 0 ? question?.votes.reduce((a, b) => a + b.vote, 0) : 0
     );
-    const z = question?.votes?.find((a) => a?.user.toString() === user?._id.toString());
+    const z = question?.votes?.find((a) => a?.user.toString() === user?._id?.toString());
     if (z) {
       if (z?.vote === 1) {
         setVoted("upvoted");
