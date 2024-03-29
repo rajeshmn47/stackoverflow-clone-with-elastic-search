@@ -37,44 +37,60 @@ export const Answer = ({ answer, id, ans, questionid }) => {
   }, [ans]);
 
   const increasevotes = async (id, questionid) => {
-    console.log(id, questionid);
-    if (!(voted === "upvoted")) {
-      setVotes(votes + 1);
-      setVoted("upvoted");
-      await axios.post(`${URL}/question/upvoteanswer/${questionid}`, {
-        user: user._id,
-        vote: 1,
-        answerid: ans._id,
-      });
-    } else {
-      await axios.post(`${URL}/question/upvoteanswer/${questionid}`, {
-        user: user._id,
-        vote: -1,
-        answerid: ans._id,
-      });
+    try {
+      if (user) {
+        console.log(id, questionid);
+        if (!(voted === "upvoted")) {
+          setVotes(votes + 1);
+          setVoted("upvoted");
+          await axios.post(`${URL}/question/upvoteanswer/${questionid}`, {
+            user: user._id,
+            vote: 1,
+            answerid: ans._id,
+          });
+        } else {
+          await axios.post(`${URL}/question/upvoteanswer/${questionid}`, {
+            user: user._id,
+            vote: -1,
+            answerid: ans._id,
+          });
 
-      setVotes(votes - 1);
-      setVoted();
+          setVotes(votes - 1);
+          setVoted();
+        }
+      }
+    }
+    catch (error) {
+      alert.error(error.response.data.message);
+      console.log(error.response.data.message);
     }
   };
   const decreasevotes = async (id, questionid) => {
-    console.log(id, questionid);
-    if (!(voted === "downvoted")) {
-      setVotes(votes - 1);
-      setVoted("downvoted");
-      await axios.post(`${URL}/question/upvoteanswer/${questionid}`, {
-        user: user._id,
-        vote: -1,
-        answerid: ans._id,
-      });
-    } else {
-      await axios.post(`${URL}/question/upvoteanswer/${questionid}`, {
-        user: user._id,
-        vote: 1,
-        answerid: ans._id,
-      });
-      setVotes(votes + 1);
-      setVoted();
+    try {
+      if (user) {
+        console.log(id, questionid);
+        if (!(voted === "downvoted")) {
+          setVotes(votes - 1);
+          setVoted("downvoted");
+          await axios.post(`${URL}/question/upvoteanswer/${questionid}`, {
+            user: user._id,
+            vote: -1,
+            answerid: ans._id,
+          });
+        } else {
+          await axios.post(`${URL}/question/upvoteanswer/${questionid}`, {
+            user: user._id,
+            vote: 1,
+            answerid: ans._id,
+          });
+          setVotes(votes + 1);
+          setVoted();
+        }
+      }
+    }
+    catch (error) {
+      alert.error(error.response.data.message);
+      console.log(error.response.data.message);
     }
   };
 

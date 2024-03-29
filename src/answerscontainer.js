@@ -101,43 +101,58 @@ export const Answerscontainer = ({ props, ref }) => {
   };
   console.log(votes, 'votes');
   const increasevotes = async () => {
-    console.log(id);
-    if (!(voted === "upvoted")) {
-      setVotes(votes + 1);
-      setVoted("upvoted");
-      await axios.post(`${URL}/question/upvotequestion/${id}`, {
-        user: user._id,
-        vote: 1,
-        questionid: question?._id,
-      });
-    } else {
-      setVotes(votes - 1);
-      setVoted();
-      await axios.post(`${URL}/question/upvotequestion/${id}`, {
-        user: user._id,
-        vote: -1,
-        questionid: question._id,
-      });
+    try {
+      if (user) {
+        console.log(id);
+        if (!(voted === "upvoted")) {
+          setVotes(votes + 1);
+          setVoted("upvoted");
+          await axios.post(`${URL}/question/upvotequestion/${id}`, {
+            user: user._id,
+            vote: 1,
+            questionid: question?._id,
+          });
+        } else {
+          setVotes(votes - 1);
+          setVoted();
+          await axios.post(`${URL}/question/upvotequestion/${id}`, {
+            user: user._id,
+            vote: -1,
+            questionid: question._id,
+          });
+        }
+      }
     }
-  };
+    catch (e) {
+      console.log(e)
+    }
+  }
+
   const decreasevotes = async () => {
-    console.log(id);
-    if (!(voted === "downvoted")) {
-      setVotes(votes - 1);
-      setVoted("downvoted");
-      await axios.post(`${URL}/question/upvotequestion/${id}`, {
-        user: user._id,
-        vote: -1,
-        questionid: question._id,
-      });
-    } else {
-      setVotes(votes + 1);
-      setVoted();
-      await axios.post(`${URL}/question/upvotequestion/${id}`, {
-        user: user._id,
-        vote: 1,
-        questionid: question._id,
-      });
+    try {
+      if (user) {
+        console.log(id);
+        if (!(voted === "downvoted")) {
+          setVotes(votes - 1);
+          setVoted("downvoted");
+          await axios.post(`${URL}/question/upvotequestion/${id}`, {
+            user: user._id,
+            vote: -1,
+            questionid: question._id,
+          });
+        } else {
+          setVotes(votes + 1);
+          setVoted();
+          await axios.post(`${URL}/question/upvotequestion/${id}`, {
+            user: user._id,
+            vote: 1,
+            questionid: question._id,
+          });
+        }
+      }
+    }
+    catch (e) {
+      console.log(e)
     }
   };
   const toolbarConfig = {
