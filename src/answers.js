@@ -34,7 +34,7 @@ export const Answer = ({ answer, id, ans, questionid }) => {
     } else {
       console.log("ok bro");
     }
-  }, [ans]);
+  }, [ans, user]);
 
   const increasevotes = async (id, questionid) => {
     try {
