@@ -88,6 +88,13 @@
   border-bottom: 15px solid rgb(161, 161, 161);
 }
 
+.shareit{
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+    margin-top: 3vmax;
+}
+
 @media (max-width: 768px) {
   .answercontainer {
     border-bottom: 1px solid rgb(220, 220, 220);
@@ -98,4 +105,10 @@
     padding: 2vmax;
     width: 100%;
   }
+  .shareit{
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-top: 3vmax;
+}
 }

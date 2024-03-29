@@ -85,7 +85,7 @@ export const Home = () => {
                   id={q._id}
                   userid={q.author}
                   answers={q.answers.length}
-                  votes={q.votes}
+                  votes={q.votes.length}
                   views={q.views}
                   createdat={q.created}
                 />

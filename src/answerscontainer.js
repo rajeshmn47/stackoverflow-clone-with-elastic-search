@@ -43,30 +43,47 @@ export const Answerscontainer = ({ props, ref }) => {
   const [value, setValue] = useState();
   const markdownEditorRef = useRef(null);
   const dispatch = useDispatch();
-  const id = useParams();
+  const { id } = useParams();
   const [question, setQuestion] = useState();
   const [text, setText] = useState();
   const [open, setOpen] = useState(false);
 
   useEffect(async () => {
     console.log(id);
-    const { data } = await axios.get(`${URL}/question/getonequestion/${id.id}`);
+    const { data } = await axios.get(`${URL}/question/getonequestion/${id}`);
     console.log(data?.question?.answers[0]?.text);
     setQuestion(data.question);
   }, [id]);
+
+  useEffect(() => {
+    setVotes(
+      question?.votes.length > 0 ? question?.votes.reduce((a, b) => a + b.vote, 0) : 0
+    );
+    const z = question?.votes?.find((a) => a?.user === user._id);
+    if (z) {
+      if (z?.vote === 1) {
+        setVoted("upvoted");
+      } else {
+        if (z?.vote === -1) setVoted("downvoted");
+      }
+    } else {
+      console.log("ok bro");
+    }
+  }, [question]);
+
   const handlesubmit = async (e) => {
     e.preventDefault();
     try {
       if (user) {
         console.log(user._id, "postanswer");
         await axios.post(`${URL}/question/postanswer`, {
-          questionid: id.id,
+          questionid: id,
           authorid: user._id,
           text: text,
         });
         alert.success("posted succesfully");
         const { data } = await axios.get(
-          `${URL}/question/getonequestion/${id.id}`
+          `${URL}/question/getonequestion/${id}`
         );
         console.log(data?.question?.answers[0]?.text);
         setQuestion(data.question);
@@ -78,27 +95,49 @@ export const Answerscontainer = ({ props, ref }) => {
       console.log(error.response.data.message);
     }
   };
+
   const updateConvertedContent = (htmlConvertedContent) => {
     setText(htmlConvertedContent);
   };
-  const increasevotes = (id, questionid) => {
-    console.log(id, questionid);
+  console.log(votes, 'votes');
+  const increasevotes = async () => {
+    console.log(id);
     if (!(voted === "upvoted")) {
       setVotes(votes + 1);
       setVoted("upvoted");
+      await axios.post(`${URL}/question/upvotequestion/${id}`, {
+        user: user._id,
+        vote: 1,
+        questionid: question?._id,
+      });
     } else {
       setVotes(votes - 1);
       setVoted();
+      await axios.post(`${URL}/question/upvotequestion/${id}`, {
+        user: user._id,
+        vote: -1,
+        questionid: question._id,
+      });
     }
   };
-  const decreasevotes = (id, questionid) => {
-    console.log(id, questionid);
+  const decreasevotes = async () => {
+    console.log(id);
     if (!(voted === "downvoted")) {
       setVotes(votes - 1);
       setVoted("downvoted");
+      await axios.post(`${URL}/question/upvotequestion/${id}`, {
+        user: user._id,
+        vote: -1,
+        questionid: question._id,
+      });
     } else {
       setVotes(votes + 1);
       setVoted();
+      await axios.post(`${URL}/question/upvotequestion/${id}`, {
+        user: user._id,
+        vote: 1,
+        questionid: question._id,
+      });
     }
   };
   const toolbarConfig = {
@@ -173,16 +212,16 @@ export const Answerscontainer = ({ props, ref }) => {
                       className={
                         voted === "upvoted" ? "votedarrow-up" : "arrow-up"
                       }
-                      onClick={() => increasevotes(id, question._id)}
+                      onClick={() => increasevotes()}
                     />
                     <h1 style={{ fontSize: "2vmax", opacity: "0.7" }}>
-                      {question?.votes.length}
+                      {votes}
                     </h1>
                     <div
                       className={
                         voted === "downvoted" ? "votedarrow-down" : "arrow-down"
                       }
-                      onClick={() => decreasevotes(id, question._id)}
+                      onClick={() => decreasevotes()}
                     />
                   </div>
                   <div
@@ -202,13 +241,7 @@ export const Answerscontainer = ({ props, ref }) => {
                       ))}
                     </div>
                     <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        width: "50vw",
-                        marginTop: "3vmax",
-                      }}
-                    >
+                      className="shareit"                    >
                       <p style={{ opacity: "0.7" }}> share edit follow</p>
                       <Usercard id={question?.author} />
                     </div>
@@ -222,15 +255,15 @@ export const Answerscontainer = ({ props, ref }) => {
                 </h1>
                 {question?.answers.length > 0
                   ? question?.answers?.map((q) => (
-                      <>
-                        <Answer
-                          answer={q?.text?.slice(3, q?.text?.length - 4)}
-                          id={q?.author}
-                          ans={q}
-                          questionid={question._id}
-                        />
-                      </>
-                    ))
+                    <>
+                      <Answer
+                        answer={q?.text?.slice(3, q?.text?.length - 4)}
+                        id={q?.author}
+                        ans={q}
+                        questionid={question._id}
+                      />
+                    </>
+                  ))
                   : null}
               </div>
             </>
