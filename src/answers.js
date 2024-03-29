@@ -24,7 +24,7 @@ export const Answer = ({ answer, id, ans, questionid }) => {
     setVotes(
       ans.votes.length > 0 ? ans.votes.reduce((a, b) => a + b.vote, 0) : 0
     );
-    const z = ans?.votes?.find((a) => a?.user === user._id);
+    const z = ans?.votes?.find((a) => a?.user === user?._id);
     if (z) {
       if (z?.vote === 1) {
         setVoted("upvoted");
