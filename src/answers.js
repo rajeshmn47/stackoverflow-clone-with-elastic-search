@@ -8,12 +8,14 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { URL } from "./constants/userConstants";
+import { useAlert } from "react-alert";
 
 export const Answer = ({ answer, id, ans, questionid }) => {
   console.log(ans);
   const { user, isAuthenticated, loading, error } = useSelector(
     (state) => state.user
   );
+  const alert = useAlert();
   const [votes, setVotes] = useState();
   const [voted, setVoted] = useState();
 
@@ -34,18 +36,18 @@ export const Answer = ({ answer, id, ans, questionid }) => {
     }
   }, [ans]);
 
-  const increasevotes = (id, questionid) => {
+  const increasevotes = async (id, questionid) => {
     console.log(id, questionid);
     if (!(voted === "upvoted")) {
       setVotes(votes + 1);
       setVoted("upvoted");
-      axios.post(`${URL}/${questionid}`, {
+      await axios.post(`${URL}/question/upvoteanswer/${questionid}`, {
         user: user._id,
         vote: 1,
         answerid: ans._id,
       });
     } else {
-      axios.post(`${URL}/question/upvoteanswer/${questionid}`, {
+      await axios.post(`${URL}/question/upvoteanswer/${questionid}`, {
         user: user._id,
         vote: -1,
         answerid: ans._id,
@@ -55,18 +57,18 @@ export const Answer = ({ answer, id, ans, questionid }) => {
       setVoted();
     }
   };
-  const decreasevotes = (id, questionid) => {
+  const decreasevotes = async (id, questionid) => {
     console.log(id, questionid);
     if (!(voted === "downvoted")) {
       setVotes(votes - 1);
       setVoted("downvoted");
-      axios.post(`${URL}/question/upvoteanswer/${questionid}`, {
+      await axios.post(`${URL}/question/upvoteanswer/${questionid}`, {
         user: user._id,
         vote: -1,
         answerid: ans._id,
       });
     } else {
-      axios.post(`${URL}/question/upvoteanswer/${questionid}`, {
+      await axios.post(`${URL}/question/upvoteanswer/${questionid}`, {
         user: user._id,
         vote: 1,
         answerid: ans._id,
@@ -75,6 +77,20 @@ export const Answer = ({ answer, id, ans, questionid }) => {
       setVoted();
     }
   };
+
+  const deleteAnswer = async (id, questionid) => {
+    try {
+      await axios.post(`${URL}/question//deleteoneanswer/${questionid}`, {
+        user: user._id,
+        answerid: ans._id,
+      });
+      alert.success("answer deleted succesfully");
+      window.location.reload();
+    } catch {
+      alert.error("something gone wrong");
+    }
+  }
+
   return (
     <>
       <div className="answer">
@@ -102,12 +118,6 @@ export const Answer = ({ answer, id, ans, questionid }) => {
           </div>
           <div style={{ width: "100%" }}>
             <ReactMarkdown children={answer} rehypePlugins={[rehypeRaw]} />
-            {user._id === ans.author.toString() ? (
-              <>
-                <button>edit</button>
-                <button>delete</button>
-              </>
-            ) : null}
             <div
               style={{
                 display: "flex",
@@ -116,10 +126,16 @@ export const Answer = ({ answer, id, ans, questionid }) => {
                 marginTop: "1.5vmax",
               }}
             >
-              <p style={{ opacity: "0.7", textTransform: "capitalize" }}>
+              {user._id === ans.author.toString() ? (
+                <div>
+                  share{" "}
+                  <button style={{ marginRight: "5px" }}>edit</button>
+                  <button onClick={() => deleteAnswer(id, questionid)}>delete</button>
+                </div>
+              ) : <p style={{ opacity: "0.7", textTransform: "capitalize" }}>
                 {" "}
                 share edit follow
-              </p>
+              </p>}
               <div>
                 <Usercard id={id} />
                 {format(ans.created)}
@@ -130,7 +146,7 @@ export const Answer = ({ answer, id, ans, questionid }) => {
         <div style={{ margin: "1vmax 1vmax" }}>
           <input
             type="text"
-            placeholder="addcomment"
+            placeholder="add comment"
             style={{ outline: "none" }}
           />
         </div>
